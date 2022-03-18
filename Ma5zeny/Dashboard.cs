@@ -20,5 +20,10 @@ namespace Ma5zeny
             InitializeComponent();
 
         }
+
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            AppManager.LoginForm.Close();
+        }
     }
 }

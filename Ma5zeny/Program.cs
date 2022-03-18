@@ -17,6 +17,8 @@ namespace Ma5zeny
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(AppManager.LoginForm);
+            Application.ApplicationExit += (obj,EventArgs) => { AppManager.LoginForm.Close();};
         }
+       
     }
 }

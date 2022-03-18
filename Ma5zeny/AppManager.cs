@@ -30,12 +30,12 @@ namespace Ma5zeny
             materialSkinManager.AddFormToManage(LoginForm);
             materialSkinManager.AddFormToManage(DashboardForm);
 
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 
             // Configure color schema
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Purple300, Primary.Purple400,
-                Primary.Blue500, Accent.LightBlue200,
+                Primary.Red400, Primary.Red700,
+                Primary.Red500, Accent.Red100,
                 TextShade.WHITE
             );
 
