@@ -31,44 +31,14 @@ namespace Ma5zeny
         /// </summary>
         private void InitializeComponent()
         {
-            this.userText = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.passText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.userText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // userText
-            // 
-            this.userText.Depth = 0;
-            this.userText.Hint = "";
-            this.userText.Location = new System.Drawing.Point(184, 379);
-            this.userText.MaxLength = 32767;
-            this.userText.MouseState = MaterialSkin.MouseState.HOVER;
-            this.userText.Name = "userText";
-            this.userText.PasswordChar = '\0';
-            this.userText.SelectedText = "";
-            this.userText.SelectionLength = 0;
-            this.userText.SelectionStart = 0;
-            this.userText.Size = new System.Drawing.Size(279, 28);
-            this.userText.TabIndex = 0;
-            this.userText.TabStop = false;
-            this.userText.UseSystemPasswordChar = false;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialLabel1.Location = new System.Drawing.Point(59, 379);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(99, 24);
-            this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "UserName";
             // 
             // passText
             // 
@@ -87,12 +57,42 @@ namespace Ma5zeny
             this.passText.TabStop = false;
             this.passText.UseSystemPasswordChar = false;
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(59, 379);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(99, 24);
+            this.materialLabel1.TabIndex = 1;
+            this.materialLabel1.Text = "UserName";
+            // 
+            // userText
+            // 
+            this.userText.Depth = 0;
+            this.userText.Hint = "";
+            this.userText.Location = new System.Drawing.Point(184, 379);
+            this.userText.MaxLength = 32767;
+            this.userText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.userText.Name = "userText";
+            this.userText.PasswordChar = '\0';
+            this.userText.SelectedText = "";
+            this.userText.SelectionLength = 0;
+            this.userText.SelectionStart = 0;
+            this.userText.Size = new System.Drawing.Size(279, 28);
+            this.userText.TabIndex = 0;
+            this.userText.TabStop = false;
+            this.userText.UseSystemPasswordChar = false;
+            // 
             // materialLabel2
             // 
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(59, 442);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
@@ -136,8 +136,8 @@ namespace Ma5zeny
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.passText);
             this.Controls.Add(this.userText);
+            this.Controls.Add(this.passText);
             this.Name = "Login";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
@@ -148,9 +148,9 @@ namespace Ma5zeny
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialSingleLineTextField userText;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField passText;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField userText;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.PictureBox logo;

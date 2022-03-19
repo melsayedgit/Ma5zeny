@@ -24,8 +24,8 @@ namespace Ma5zeny
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            string username = userText.Text;
-            string password = passText.Text;
+            string username = passText.Text;
+            string password = userText.Text;
             bool success = false;
 
 
