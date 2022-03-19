@@ -36,6 +36,8 @@ namespace Ma5zeny
 
             updateWarehouseView();
             updateItemView();
+            updateSuppliersView();
+            updateCustomersView();
 
 
 
@@ -55,6 +57,8 @@ namespace Ma5zeny
             foreach (var wr in WarehouseView)
             {
                 listBox1.Items.Add( "Name:"+ wr.Name +",Address:"+ wr.Address+",Manger_id:" +wr.Manger_id );
+     
+
             }
             
         }
@@ -75,6 +79,73 @@ namespace Ma5zeny
             }
 
         }
+
+        void updateSuppliersView()
+        {
+
+            var supplierview = from sp in AppManager.entities.Suppliers
+                                select new
+                                {
+                                    sp.ID,
+                                    sp.Name,
+                                    sp.Phone_,
+                                    sp.FAX,
+                                    sp.Email,
+                                    sp.Website
+                                };
+            listBox3.Items.Clear();
+            foreach (var sp in supplierview)
+            {
+                listBox3.Items.Add("Id:" + sp.ID + ",Name:" + sp.Name 
+                    + ",phone:" + sp.Phone_+ ",fax:"+sp.FAX
+                    +",email:"+sp.Email+"website:"+sp.Website);
+            }
+
+        }
+
+        void updateCustomersView()
+        {
+
+            var Customersrview = from sp in AppManager.entities.Customers
+                                 select new
+                                 {
+                                     sp.ID,
+                                     sp.Name,
+                                     sp.Phone,
+                                     sp.FAX,
+                                     sp.Email,
+                                     sp.Website
+                                 };
+            listBox4.Items.Clear();
+            foreach (var sp in Customersrview)
+            {
+                listBox4.Items.Add("Id:" + sp.ID + ",Name:" + sp.Name
+                    + ",phone:" + sp.Phone + ",fax:" + sp.FAX
+                    + ",email:" + sp.Email + "website:" + sp.Website);
+            }
+
+        }
+            void updateBuyingView()
+            {
+
+                var BuyingView = from inv in AppManager.entities.Buying_Invoice
+                                     select new
+                                     {
+                                         inv.Order_number,
+                                         inv.Buying_Date,
+                                         inv.producing_Date,
+                                         inv.expiry_count_days,
+                                         inv.Warehouse,
+                                         inv.Supplier_D
+                                     };
+                listBox4.Items.Clear();
+                foreach (var inv in BuyingView)
+                {
+                    listBox4.Items.Add("Order number:" + inv.Order_number + ",Buying_Date:" + inv.Buying_Date
+                        + ",producing_Date:" + inv.producing_Date + ",expiry_days:" + inv.expiry_count_days
+                        + ",Warehouse:" + inv.Warehouse + "Supplier_D:" + inv.Supplier_D);
+                }
+            }
         #endregion
 
         #region Warehouse
@@ -286,10 +357,176 @@ namespace Ma5zeny
                 MessageBox.Show("Conflicting Data", "Error");
             }
         }
+
         #endregion
 
+        #region Suplier
+        private void materialRaisedButton9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Supplier temp = new Supplier();
+                temp.ID = int.Parse(textBox9.Text);
+                temp.Name = textBox8.Text;
+                temp.Phone_ = int.Parse(textBox7.Text);
+                temp.FAX = int.Parse(textBox4.Text);
+                temp.Email = textBox10.Text;
+                temp.Website = textBox11.Text;
+                AppManager.entities.Suppliers.Add(temp);
+                    AppManager.entities.SaveChanges();
+                updateSuppliersView();
 
+
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Conflicting Data", "Error");
+            }
+        }
+
+        private void materialRaisedButton8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Supplier temp = AppManager.entities.Suppliers.Find(int.Parse(textBox9.Text));
+                AppManager.entities.Suppliers.Remove(temp);
+                temp.ID = int.Parse(textBox9.Text);
+                temp.Name = textBox8.Text;
+                temp.Phone_ = int.Parse(textBox7.Text);
+                temp.FAX = int.Parse(textBox4.Text);
+                temp.Email = textBox10.Text;
+                temp.Website = textBox11.Text;
+                AppManager.entities.Suppliers.Add(temp);
+                AppManager.entities.SaveChanges();
+                updateSuppliersView();
+
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Conflicting Data", "Error");
+            }
+        }
+
+        private void materialRaisedButton7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Supplier temp = AppManager.entities.Suppliers.Find(int.Parse(textBox9.Text));
+                AppManager.entities.Suppliers.Remove(temp);
+                AppManager.entities.SaveChanges();
+                updateSuppliersView();
+
+
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Conflicting Data", "Error");
+            }
+        }
+        #endregion
+
+        #region Customer
+        private void materialRaisedButton12_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Customer temp = new Customer();
+                temp.ID = int.Parse(textBox12.Text);
+                temp.Name = textBox17.Text;
+                temp.Phone = int.Parse(textBox16.Text);
+                temp.FAX = int.Parse(textBox15.Text);
+                temp.Email = textBox14.Text;
+                temp.Website = textBox13.Text;
+                AppManager.entities.Customers.Add(temp);
+                AppManager.entities.SaveChanges();
+                updateCustomersView();
+
+
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Conflicting Data", "Error");
+            }
+        }
+
+        private void materialRaisedButton11_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Customer temp = AppManager.entities.Customers.Find(int.Parse(textBox12.Text));
+                AppManager.entities.Customers.Remove(temp);
+                temp.ID = int.Parse(textBox12.Text);
+                temp.Name = textBox17.Text;
+                temp.Phone = int.Parse(textBox16.Text);
+                temp.FAX = int.Parse(textBox15.Text);
+                temp.Email = textBox14.Text;
+                temp.Website = textBox13.Text;
+                AppManager.entities.Customers.Add(temp);
+                AppManager.entities.SaveChanges();
+                updateCustomersView();
+
+
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Conflicting Data", "Error");
+            }
+        }
+
+        private void materialRaisedButton10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Customer temp = AppManager.entities.Customers.Find(int.Parse(textBox12.Text));
+                AppManager.entities.SaveChanges();
+                updateCustomersView();
+
+
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Conflicting Data", "Error");
+            }
+
+        }
+
+
+        #endregion
+
+        #region Buying invoices
+        private void materialRaisedButton15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialRaisedButton14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialRaisedButton13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
     }
+
+
 
 
 

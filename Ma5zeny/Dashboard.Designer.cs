@@ -44,16 +44,6 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label1 = new System.Windows.Forms.Label();
             this.Items = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Customer = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Buying_invoices = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Selling_invoices = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Stock_Transfer = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Reports = new System.Windows.Forms.TabPage();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -62,11 +52,72 @@
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Suppliers = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.materialRaisedButton7 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton8 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton9 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label15 = new System.Windows.Forms.Label();
+            this.Customer = new System.Windows.Forms.TabPage();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.materialRaisedButton10 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton11 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton12 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Buying_invoices = new System.Windows.Forms.TabPage();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.materialRaisedButton13 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton14 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton15 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Selling_invoices = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Stock_Transfer = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Reports = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.Managing.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.WareHouse.SuspendLayout();
             this.Items.SuspendLayout();
+            this.Suppliers.SuspendLayout();
             this.Customer.SuspendLayout();
             this.Buying_invoices.SuspendLayout();
             this.Selling_invoices.SuspendLayout();
@@ -97,6 +148,7 @@
             // 
             this.tabControl2.Controls.Add(this.WareHouse);
             this.tabControl2.Controls.Add(this.Items);
+            this.tabControl2.Controls.Add(this.Suppliers);
             this.tabControl2.Controls.Add(this.Customer);
             this.tabControl2.Controls.Add(this.Buying_invoices);
             this.tabControl2.Controls.Add(this.Selling_invoices);
@@ -126,7 +178,7 @@
             this.WareHouse.Padding = new System.Windows.Forms.Padding(3);
             this.WareHouse.Size = new System.Drawing.Size(859, 388);
             this.WareHouse.TabIndex = 0;
-            this.WareHouse.Text = "WareHouse";
+            this.WareHouse.Text = "WareHouses";
             this.WareHouse.UseVisualStyleBackColor = true;
             // 
             // listBox1
@@ -267,111 +319,6 @@
             this.Items.Text = "Items";
             this.Items.UseVisualStyleBackColor = true;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Salmon;
-            this.label4.Location = new System.Drawing.Point(361, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 39);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Items";
-            // 
-            // Customer
-            // 
-            this.Customer.Controls.Add(this.label5);
-            this.Customer.Location = new System.Drawing.Point(4, 25);
-            this.Customer.Name = "Customer";
-            this.Customer.Size = new System.Drawing.Size(859, 388);
-            this.Customer.TabIndex = 2;
-            this.Customer.Text = "Customer";
-            this.Customer.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Salmon;
-            this.label5.Location = new System.Drawing.Point(349, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 39);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Customer";
-            // 
-            // Buying_invoices
-            // 
-            this.Buying_invoices.Controls.Add(this.label2);
-            this.Buying_invoices.Location = new System.Drawing.Point(4, 25);
-            this.Buying_invoices.Name = "Buying_invoices";
-            this.Buying_invoices.Size = new System.Drawing.Size(859, 388);
-            this.Buying_invoices.TabIndex = 3;
-            this.Buying_invoices.Text = "Buying invoices";
-            this.Buying_invoices.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Salmon;
-            this.label2.Location = new System.Drawing.Point(298, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 39);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Buying Inovices";
-            // 
-            // Selling_invoices
-            // 
-            this.Selling_invoices.Controls.Add(this.label3);
-            this.Selling_invoices.Location = new System.Drawing.Point(4, 25);
-            this.Selling_invoices.Name = "Selling_invoices";
-            this.Selling_invoices.Size = new System.Drawing.Size(859, 388);
-            this.Selling_invoices.TabIndex = 4;
-            this.Selling_invoices.Text = "Selling invoices";
-            this.Selling_invoices.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Salmon;
-            this.label3.Location = new System.Drawing.Point(294, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(227, 39);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Selling Inovices";
-            // 
-            // Stock_Transfer
-            // 
-            this.Stock_Transfer.Controls.Add(this.label6);
-            this.Stock_Transfer.ForeColor = System.Drawing.Color.Coral;
-            this.Stock_Transfer.Location = new System.Drawing.Point(4, 25);
-            this.Stock_Transfer.Name = "Stock_Transfer";
-            this.Stock_Transfer.Size = new System.Drawing.Size(859, 388);
-            this.Stock_Transfer.TabIndex = 5;
-            this.Stock_Transfer.Text = "Stock Transfer";
-            this.Stock_Transfer.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Salmon;
-            this.label6.Location = new System.Drawing.Point(313, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(212, 39);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Stock Transfer";
-            // 
-            // Reports
-            // 
-            this.Reports.Location = new System.Drawing.Point(4, 25);
-            this.Reports.Name = "Reports";
-            this.Reports.Size = new System.Drawing.Size(881, 426);
-            this.Reports.TabIndex = 1;
-            this.Reports.Text = "Reports";
-            this.Reports.UseVisualStyleBackColor = true;
-            // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
@@ -463,6 +410,657 @@
             this.materialRaisedButton6.UseVisualStyleBackColor = true;
             this.materialRaisedButton6.Click += new System.EventHandler(this.materialRaisedButton6_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Salmon;
+            this.label4.Location = new System.Drawing.Point(361, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 39);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Items";
+            // 
+            // Suppliers
+            // 
+            this.Suppliers.Controls.Add(this.label16);
+            this.Suppliers.Controls.Add(this.textBox9);
+            this.Suppliers.Controls.Add(this.listBox3);
+            this.Suppliers.Controls.Add(this.label18);
+            this.Suppliers.Controls.Add(this.label17);
+            this.Suppliers.Controls.Add(this.label10);
+            this.Suppliers.Controls.Add(this.label13);
+            this.Suppliers.Controls.Add(this.textBox11);
+            this.Suppliers.Controls.Add(this.label14);
+            this.Suppliers.Controls.Add(this.textBox10);
+            this.Suppliers.Controls.Add(this.textBox4);
+            this.Suppliers.Controls.Add(this.textBox7);
+            this.Suppliers.Controls.Add(this.textBox8);
+            this.Suppliers.Controls.Add(this.materialRaisedButton7);
+            this.Suppliers.Controls.Add(this.materialRaisedButton8);
+            this.Suppliers.Controls.Add(this.materialRaisedButton9);
+            this.Suppliers.Controls.Add(this.label15);
+            this.Suppliers.Location = new System.Drawing.Point(4, 25);
+            this.Suppliers.Name = "Suppliers";
+            this.Suppliers.Size = new System.Drawing.Size(859, 388);
+            this.Suppliers.TabIndex = 6;
+            this.Suppliers.Text = "Suppliers";
+            this.Suppliers.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(28, 53);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(33, 24);
+            this.label16.TabIndex = 19;
+            this.label16.Text = "ID";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(129, 56);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(217, 22);
+            this.textBox9.TabIndex = 18;
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 16;
+            this.listBox3.Location = new System.Drawing.Point(366, 53);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(474, 260);
+            this.listBox3.TabIndex = 17;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(16, 283);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(83, 24);
+            this.label18.TabIndex = 14;
+            this.label18.Text = "Website";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(16, 237);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(63, 24);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "Email";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(28, 191);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 24);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Fax";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(16, 145);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 24);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Phone";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(129, 286);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(217, 22);
+            this.textBox11.TabIndex = 11;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(16, 99);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(63, 24);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Name";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(129, 240);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(217, 22);
+            this.textBox10.TabIndex = 12;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(129, 194);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(217, 22);
+            this.textBox4.TabIndex = 11;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(129, 148);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(217, 22);
+            this.textBox7.TabIndex = 12;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(129, 102);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(217, 22);
+            this.textBox8.TabIndex = 13;
+            // 
+            // materialRaisedButton7
+            // 
+            this.materialRaisedButton7.AutoSize = true;
+            this.materialRaisedButton7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton7.Depth = 0;
+            this.materialRaisedButton7.Icon = null;
+            this.materialRaisedButton7.Location = new System.Drawing.Point(238, 324);
+            this.materialRaisedButton7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton7.Name = "materialRaisedButton7";
+            this.materialRaisedButton7.Primary = true;
+            this.materialRaisedButton7.Size = new System.Drawing.Size(82, 36);
+            this.materialRaisedButton7.TabIndex = 8;
+            this.materialRaisedButton7.Text = "Delete";
+            this.materialRaisedButton7.UseVisualStyleBackColor = true;
+            this.materialRaisedButton7.Click += new System.EventHandler(this.materialRaisedButton7_Click);
+            // 
+            // materialRaisedButton8
+            // 
+            this.materialRaisedButton8.AutoSize = true;
+            this.materialRaisedButton8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton8.Depth = 0;
+            this.materialRaisedButton8.Icon = null;
+            this.materialRaisedButton8.Location = new System.Drawing.Point(129, 324);
+            this.materialRaisedButton8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton8.Name = "materialRaisedButton8";
+            this.materialRaisedButton8.Primary = true;
+            this.materialRaisedButton8.Size = new System.Drawing.Size(87, 36);
+            this.materialRaisedButton8.TabIndex = 9;
+            this.materialRaisedButton8.Text = "Update";
+            this.materialRaisedButton8.UseVisualStyleBackColor = true;
+            this.materialRaisedButton8.Click += new System.EventHandler(this.materialRaisedButton8_Click);
+            // 
+            // materialRaisedButton9
+            // 
+            this.materialRaisedButton9.AutoSize = true;
+            this.materialRaisedButton9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton9.Depth = 0;
+            this.materialRaisedButton9.Icon = null;
+            this.materialRaisedButton9.Location = new System.Drawing.Point(53, 324);
+            this.materialRaisedButton9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton9.Name = "materialRaisedButton9";
+            this.materialRaisedButton9.Primary = true;
+            this.materialRaisedButton9.Size = new System.Drawing.Size(56, 36);
+            this.materialRaisedButton9.TabIndex = 10;
+            this.materialRaisedButton9.Text = "Add";
+            this.materialRaisedButton9.UseVisualStyleBackColor = true;
+            this.materialRaisedButton9.Click += new System.EventHandler(this.materialRaisedButton9_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Salmon;
+            this.label15.Location = new System.Drawing.Point(337, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(128, 39);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "Supliers";
+            // 
+            // Customer
+            // 
+            this.Customer.Controls.Add(this.label19);
+            this.Customer.Controls.Add(this.textBox12);
+            this.Customer.Controls.Add(this.listBox4);
+            this.Customer.Controls.Add(this.label20);
+            this.Customer.Controls.Add(this.label21);
+            this.Customer.Controls.Add(this.label22);
+            this.Customer.Controls.Add(this.label23);
+            this.Customer.Controls.Add(this.textBox13);
+            this.Customer.Controls.Add(this.label24);
+            this.Customer.Controls.Add(this.textBox14);
+            this.Customer.Controls.Add(this.textBox15);
+            this.Customer.Controls.Add(this.textBox16);
+            this.Customer.Controls.Add(this.textBox17);
+            this.Customer.Controls.Add(this.materialRaisedButton10);
+            this.Customer.Controls.Add(this.materialRaisedButton11);
+            this.Customer.Controls.Add(this.materialRaisedButton12);
+            this.Customer.Controls.Add(this.label5);
+            this.Customer.Location = new System.Drawing.Point(4, 25);
+            this.Customer.Name = "Customer";
+            this.Customer.Size = new System.Drawing.Size(859, 388);
+            this.Customer.TabIndex = 2;
+            this.Customer.Text = "Customers";
+            this.Customer.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(34, 65);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(33, 24);
+            this.label19.TabIndex = 35;
+            this.label19.Text = "ID";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(135, 68);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(217, 22);
+            this.textBox12.TabIndex = 34;
+            // 
+            // listBox4
+            // 
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.ItemHeight = 16;
+            this.listBox4.Location = new System.Drawing.Point(372, 65);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(474, 260);
+            this.listBox4.TabIndex = 33;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(22, 295);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(83, 24);
+            this.label20.TabIndex = 28;
+            this.label20.Text = "Website";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(22, 249);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(63, 24);
+            this.label21.TabIndex = 30;
+            this.label21.Text = "Email";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(34, 203);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(42, 24);
+            this.label22.TabIndex = 29;
+            this.label22.Text = "Fax";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(22, 157);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(67, 24);
+            this.label23.TabIndex = 31;
+            this.label23.Text = "Phone";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(135, 298);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(217, 22);
+            this.textBox13.TabIndex = 23;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(22, 111);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(63, 24);
+            this.label24.TabIndex = 32;
+            this.label24.Text = "Name";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(135, 252);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(217, 22);
+            this.textBox14.TabIndex = 25;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(135, 206);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(217, 22);
+            this.textBox15.TabIndex = 24;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(135, 160);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(217, 22);
+            this.textBox16.TabIndex = 26;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(135, 114);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(217, 22);
+            this.textBox17.TabIndex = 27;
+            // 
+            // materialRaisedButton10
+            // 
+            this.materialRaisedButton10.AutoSize = true;
+            this.materialRaisedButton10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton10.Depth = 0;
+            this.materialRaisedButton10.Icon = null;
+            this.materialRaisedButton10.Location = new System.Drawing.Point(244, 336);
+            this.materialRaisedButton10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton10.Name = "materialRaisedButton10";
+            this.materialRaisedButton10.Primary = true;
+            this.materialRaisedButton10.Size = new System.Drawing.Size(82, 36);
+            this.materialRaisedButton10.TabIndex = 20;
+            this.materialRaisedButton10.Text = "Delete";
+            this.materialRaisedButton10.UseVisualStyleBackColor = true;
+            this.materialRaisedButton10.Click += new System.EventHandler(this.materialRaisedButton10_Click);
+            // 
+            // materialRaisedButton11
+            // 
+            this.materialRaisedButton11.AutoSize = true;
+            this.materialRaisedButton11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton11.Depth = 0;
+            this.materialRaisedButton11.Icon = null;
+            this.materialRaisedButton11.Location = new System.Drawing.Point(135, 336);
+            this.materialRaisedButton11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton11.Name = "materialRaisedButton11";
+            this.materialRaisedButton11.Primary = true;
+            this.materialRaisedButton11.Size = new System.Drawing.Size(87, 36);
+            this.materialRaisedButton11.TabIndex = 21;
+            this.materialRaisedButton11.Text = "Update";
+            this.materialRaisedButton11.UseVisualStyleBackColor = true;
+            this.materialRaisedButton11.Click += new System.EventHandler(this.materialRaisedButton11_Click);
+            // 
+            // materialRaisedButton12
+            // 
+            this.materialRaisedButton12.AutoSize = true;
+            this.materialRaisedButton12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton12.Depth = 0;
+            this.materialRaisedButton12.Icon = null;
+            this.materialRaisedButton12.Location = new System.Drawing.Point(59, 336);
+            this.materialRaisedButton12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton12.Name = "materialRaisedButton12";
+            this.materialRaisedButton12.Primary = true;
+            this.materialRaisedButton12.Size = new System.Drawing.Size(56, 36);
+            this.materialRaisedButton12.TabIndex = 22;
+            this.materialRaisedButton12.Text = "Add";
+            this.materialRaisedButton12.UseVisualStyleBackColor = true;
+            this.materialRaisedButton12.Click += new System.EventHandler(this.materialRaisedButton12_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Salmon;
+            this.label5.Location = new System.Drawing.Point(349, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(137, 39);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Customer";
+            // 
+            // Buying_invoices
+            // 
+            this.Buying_invoices.Controls.Add(this.dateTimePicker2);
+            this.Buying_invoices.Controls.Add(this.dateTimePicker1);
+            this.Buying_invoices.Controls.Add(this.label25);
+            this.Buying_invoices.Controls.Add(this.textBox18);
+            this.Buying_invoices.Controls.Add(this.listBox5);
+            this.Buying_invoices.Controls.Add(this.label26);
+            this.Buying_invoices.Controls.Add(this.label27);
+            this.Buying_invoices.Controls.Add(this.label28);
+            this.Buying_invoices.Controls.Add(this.label29);
+            this.Buying_invoices.Controls.Add(this.textBox19);
+            this.Buying_invoices.Controls.Add(this.label30);
+            this.Buying_invoices.Controls.Add(this.textBox20);
+            this.Buying_invoices.Controls.Add(this.textBox21);
+            this.Buying_invoices.Controls.Add(this.materialRaisedButton13);
+            this.Buying_invoices.Controls.Add(this.materialRaisedButton14);
+            this.Buying_invoices.Controls.Add(this.materialRaisedButton15);
+            this.Buying_invoices.Controls.Add(this.label2);
+            this.Buying_invoices.Location = new System.Drawing.Point(4, 25);
+            this.Buying_invoices.Name = "Buying_invoices";
+            this.Buying_invoices.Size = new System.Drawing.Size(859, 388);
+            this.Buying_invoices.TabIndex = 3;
+            this.Buying_invoices.Text = "Buying invoices";
+            this.Buying_invoices.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(159, 168);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(250, 22);
+            this.dateTimePicker2.TabIndex = 52;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(135, 122);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(246, 22);
+            this.dateTimePicker1.TabIndex = 52;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(8, 74);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(118, 24);
+            this.label25.TabIndex = 51;
+            this.label25.Text = "Order Num:";
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(135, 74);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(217, 22);
+            this.textBox18.TabIndex = 50;
+            // 
+            // listBox5
+            // 
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.ItemHeight = 16;
+            this.listBox5.Location = new System.Drawing.Point(431, 71);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(408, 260);
+            this.listBox5.TabIndex = 49;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(8, 301);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(117, 24);
+            this.label26.TabIndex = 44;
+            this.label26.Text = "Supplier iD:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(3, 255);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(118, 24);
+            this.label27.TabIndex = 46;
+            this.label27.Text = "Warehouse:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(3, 212);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(134, 24);
+            this.label28.TabIndex = 45;
+            this.label28.Text = "Expiry(Days):";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(3, 166);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(150, 24);
+            this.label29.TabIndex = 47;
+            this.label29.Text = "Producing date:";
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(128, 304);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(217, 22);
+            this.textBox19.TabIndex = 39;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(3, 120);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(126, 24);
+            this.label30.TabIndex = 48;
+            this.label30.Text = "Buying Date:";
+            // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(128, 258);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(217, 22);
+            this.textBox20.TabIndex = 41;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(128, 212);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(217, 22);
+            this.textBox21.TabIndex = 40;
+            // 
+            // materialRaisedButton13
+            // 
+            this.materialRaisedButton13.AutoSize = true;
+            this.materialRaisedButton13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton13.Depth = 0;
+            this.materialRaisedButton13.Icon = null;
+            this.materialRaisedButton13.Location = new System.Drawing.Point(237, 342);
+            this.materialRaisedButton13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton13.Name = "materialRaisedButton13";
+            this.materialRaisedButton13.Primary = true;
+            this.materialRaisedButton13.Size = new System.Drawing.Size(82, 36);
+            this.materialRaisedButton13.TabIndex = 36;
+            this.materialRaisedButton13.Text = "Delete";
+            this.materialRaisedButton13.UseVisualStyleBackColor = true;
+            this.materialRaisedButton13.Click += new System.EventHandler(this.materialRaisedButton13_Click);
+            // 
+            // materialRaisedButton14
+            // 
+            this.materialRaisedButton14.AutoSize = true;
+            this.materialRaisedButton14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton14.Depth = 0;
+            this.materialRaisedButton14.Icon = null;
+            this.materialRaisedButton14.Location = new System.Drawing.Point(128, 342);
+            this.materialRaisedButton14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton14.Name = "materialRaisedButton14";
+            this.materialRaisedButton14.Primary = true;
+            this.materialRaisedButton14.Size = new System.Drawing.Size(87, 36);
+            this.materialRaisedButton14.TabIndex = 37;
+            this.materialRaisedButton14.Text = "Update";
+            this.materialRaisedButton14.UseVisualStyleBackColor = true;
+            this.materialRaisedButton14.Click += new System.EventHandler(this.materialRaisedButton14_Click);
+            // 
+            // materialRaisedButton15
+            // 
+            this.materialRaisedButton15.AutoSize = true;
+            this.materialRaisedButton15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton15.Depth = 0;
+            this.materialRaisedButton15.Icon = null;
+            this.materialRaisedButton15.Location = new System.Drawing.Point(52, 342);
+            this.materialRaisedButton15.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton15.Name = "materialRaisedButton15";
+            this.materialRaisedButton15.Primary = true;
+            this.materialRaisedButton15.Size = new System.Drawing.Size(56, 36);
+            this.materialRaisedButton15.TabIndex = 38;
+            this.materialRaisedButton15.Text = "Add";
+            this.materialRaisedButton15.UseVisualStyleBackColor = true;
+            this.materialRaisedButton15.Click += new System.EventHandler(this.materialRaisedButton15_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Salmon;
+            this.label2.Location = new System.Drawing.Point(298, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(233, 39);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Buying Inovices";
+            // 
+            // Selling_invoices
+            // 
+            this.Selling_invoices.Controls.Add(this.label3);
+            this.Selling_invoices.Location = new System.Drawing.Point(4, 25);
+            this.Selling_invoices.Name = "Selling_invoices";
+            this.Selling_invoices.Size = new System.Drawing.Size(859, 388);
+            this.Selling_invoices.TabIndex = 4;
+            this.Selling_invoices.Text = "Selling invoices";
+            this.Selling_invoices.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Salmon;
+            this.label3.Location = new System.Drawing.Point(294, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(227, 39);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Selling Inovices";
+            // 
+            // Stock_Transfer
+            // 
+            this.Stock_Transfer.Controls.Add(this.label6);
+            this.Stock_Transfer.ForeColor = System.Drawing.Color.Coral;
+            this.Stock_Transfer.Location = new System.Drawing.Point(4, 25);
+            this.Stock_Transfer.Name = "Stock_Transfer";
+            this.Stock_Transfer.Size = new System.Drawing.Size(859, 388);
+            this.Stock_Transfer.TabIndex = 5;
+            this.Stock_Transfer.Text = "Stock Transfer";
+            this.Stock_Transfer.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Salmon;
+            this.label6.Location = new System.Drawing.Point(313, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(212, 39);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Stock Transfer";
+            // 
+            // Reports
+            // 
+            this.Reports.Location = new System.Drawing.Point(4, 25);
+            this.Reports.Name = "Reports";
+            this.Reports.Size = new System.Drawing.Size(881, 426);
+            this.Reports.TabIndex = 1;
+            this.Reports.Text = "Reports";
+            this.Reports.UseVisualStyleBackColor = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -480,6 +1078,8 @@
             this.WareHouse.PerformLayout();
             this.Items.ResumeLayout(false);
             this.Items.PerformLayout();
+            this.Suppliers.ResumeLayout(false);
+            this.Suppliers.PerformLayout();
             this.Customer.ResumeLayout(false);
             this.Customer.PerformLayout();
             this.Buying_invoices.ResumeLayout(false);
@@ -528,5 +1128,55 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton5;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton6;
+        private System.Windows.Forms.TabPage Suppliers;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton7;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton8;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton9;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox textBox17;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton10;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton11;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton12;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox textBox21;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton13;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton14;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton15;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
