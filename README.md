@@ -2,3 +2,6 @@
 # Ma5zeny
 A management system for warehouse that can support multiple language using C# and SQL
 
+# ERD
+
+![Erd](https://user-images.githubusercontent.com/75117329/159138086-16c2f3b6-3741-4704-ad62-eea652fc1abf.png)
