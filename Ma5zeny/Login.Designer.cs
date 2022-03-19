@@ -31,6 +31,7 @@ namespace Ma5zeny
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.passText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.userText = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -120,7 +121,7 @@ namespace Ma5zeny
             // 
             this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.logo.Image = global::Ma5zeny.Properties.Resources.Ma5zenyLogo;
-            this.logo.Location = new System.Drawing.Point(35, 122);
+            this.logo.Location = new System.Drawing.Point(26, 122);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(456, 251);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -131,14 +132,19 @@ namespace Ma5zeny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 570);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(517, 570);
             this.Controls.Add(this.logo);
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.userText);
             this.Controls.Add(this.passText);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 50);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
