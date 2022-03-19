@@ -14,7 +14,7 @@ namespace Ma5zeny
     
     public partial class Contains_Items
     {
-        public int Amount { get; set; }
+        public Nullable<int> Amount { get; set; }
         public int BarCode { get; set; }
         public string Itme_Name { get; set; }
     

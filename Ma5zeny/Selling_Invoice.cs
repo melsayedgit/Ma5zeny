@@ -21,9 +21,9 @@ namespace Ma5zeny
         }
     
         public int Order_number { get; set; }
-        public System.DateTime Buying_Date { get; set; }
-        public string Name { get; set; }
-        public int Customer_ID { get; set; }
+        public Nullable<System.DateTime> Buying_Date { get; set; }
+        public string Warehouse_Name { get; set; }
+        public Nullable<int> Customer_ID { get; set; }
     
         public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

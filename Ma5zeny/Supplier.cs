@@ -22,8 +22,8 @@ namespace Ma5zeny
     
         public int ID { get; set; }
         public string Name { get; set; }
-        public int Phone_ { get; set; }
-        public int FAX { get; set; }
+        public Nullable<int> Phone { get; set; }
+        public Nullable<int> FAX { get; set; }
         public string Email { get; set; }
         public string Website { get; set; }
     

@@ -21,11 +21,11 @@ namespace Ma5zeny
         }
     
         public int Order_number { get; set; }
-        public System.DateTime Buying_Date { get; set; }
-        public System.DateTime producing_Date { get; set; }
-        public int expiry_count_days { get; set; }
+        public Nullable<System.DateTime> Buying_Date { get; set; }
+        public Nullable<System.DateTime> producing_Date { get; set; }
+        public Nullable<int> expiry_count_days { get; set; }
         public string Warehouse_Name { get; set; }
-        public int Supplier_D { get; set; }
+        public Nullable<int> Supplier_D { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Buying_includes> Buying_includes { get; set; }

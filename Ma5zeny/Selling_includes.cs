@@ -14,7 +14,7 @@ namespace Ma5zeny
     
     public partial class Selling_includes
     {
-        public int Amount { get; set; }
+        public Nullable<int> Amount { get; set; }
         public int Order_number { get; set; }
         public int BarCode { get; set; }
     

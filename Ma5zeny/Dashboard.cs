@@ -89,7 +89,7 @@ namespace Ma5zeny
                                 {
                                     sp.ID,
                                     sp.Name,
-                                    sp.Phone_,
+                                    sp.Phone,
                                     sp.FAX,
                                     sp.Email,
                                     sp.Website
@@ -98,7 +98,7 @@ namespace Ma5zeny
             foreach (var sp in supplierview)
             {
                 listBox3.Items.Add("Id:" + sp.ID + ",Name:" + sp.Name 
-                    + ",phone:" + sp.Phone_+ ",fax:"+sp.FAX
+                    + ",phone:" + sp.Phone+ ",fax:"+sp.FAX
                     +",email:"+sp.Email+"website:"+sp.Website);
             }
 
@@ -369,7 +369,7 @@ namespace Ma5zeny
                 Supplier temp = new Supplier();
                 temp.ID = int.Parse(textBox9.Text);
                 temp.Name = textBox8.Text;
-                temp.Phone_ = int.Parse(textBox7.Text);
+                temp.Phone = int.Parse(textBox7.Text);
                 temp.FAX = int.Parse(textBox4.Text);
                 temp.Email = textBox10.Text;
                 temp.Website = textBox11.Text;
@@ -396,7 +396,7 @@ namespace Ma5zeny
                 AppManager.entities.Suppliers.Remove(temp);
                 temp.ID = int.Parse(textBox9.Text);
                 temp.Name = textBox8.Text;
-                temp.Phone_ = int.Parse(textBox7.Text);
+                temp.Phone = int.Parse(textBox7.Text);
                 temp.FAX = int.Parse(textBox4.Text);
                 temp.Email = textBox10.Text;
                 temp.Website = textBox11.Text;
@@ -582,12 +582,11 @@ namespace Ma5zeny
             }
         }
 
+
         #endregion
 
         #region Selling Invocies
 
         #endregion
-
-
     }
 }

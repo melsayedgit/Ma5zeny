@@ -12,7 +12,7 @@ namespace Ma5zeny
     internal class AppManager
     {
         public static Login LoginForm;
-        public static WarehouseEntities2 entities;
+        public static WarehouseEntities3 entities;
         public static Dashboard DashboardForm;
         public static Manger CurrentManager;
 
@@ -21,7 +21,7 @@ namespace Ma5zeny
 
             //initialize the  forms to be used them during the app
             //to show and close them anywhere in the app and easily access them
-            entities = new WarehouseEntities2();
+            entities = new WarehouseEntities3();
             LoginForm = new Login();
             DashboardForm = new Dashboard();
 
