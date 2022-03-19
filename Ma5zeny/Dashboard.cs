@@ -35,7 +35,7 @@ namespace Ma5zeny
         {
 
             updateWarehouseView();
-
+            updateItemView();
 
 
 
@@ -57,6 +57,23 @@ namespace Ma5zeny
                 listBox1.Items.Add( "Name:"+ wr.Name +",Address:"+ wr.Address+",Manger_id:" +wr.Manger_id );
             }
             
+        }
+
+        void updateItemView()
+        {
+
+            var view = from wr in AppManager.entities.Iteams
+                                select new
+                                {
+                                    wr.BarCode,
+                                    wr.Name  
+                                };
+            listBox2.Items.Clear();
+            foreach (var wr in view)
+            {
+                listBox2.Items.Add("BarCode:" + wr.BarCode + ",Name:" + wr.Name );
+            }
+
         }
         #endregion
 
@@ -174,6 +191,102 @@ namespace Ma5zeny
             }
         }
         #endregion Warehouse
+
+        #region Items 
+
+        private void materialRaisedButton6_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                var temp = new Iteam();
+                temp.BarCode = int.Parse(textBox6.Text);
+                temp.Name = textBox5.Text;
+
+                if (temp.Name == "")
+                {
+                    MessageBox.Show("You Didn't enter Item Name", "Error");
+                }
+                else
+                {
+
+                    AppManager.entities.Iteams.Add(temp);
+                    AppManager.entities.SaveChanges();
+                    updateItemView();
+
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Conflicting Data", "Error");
+            }
+        }
+        private void materialRaisedButton5_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                var temp = AppManager.entities.Iteams.Find(int.Parse(textBox6.Text));
+
+
+                if (temp.Name == "")
+                {
+                    MessageBox.Show("You Didn't enter Item Name", "Error");
+                }
+                else
+                {
+                    AppManager.entities.Iteams.Remove(temp);
+                    temp.BarCode = int.Parse(textBox6.Text);
+                    temp.Name = textBox5.Text;
+                    AppManager.entities.Iteams.Add(temp);
+                    AppManager.entities.SaveChanges();
+                    updateItemView();
+
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Conflicting Data", "Error");
+            }
+        }
+
+  
+  
+
+        private void materialRaisedButton4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var temp = AppManager.entities.Iteams.Find(int.Parse(textBox6.Text));
+
+
+                if (temp.Name == "")
+                {
+                    MessageBox.Show("You Didn't enter Item Name", "Error");
+                }
+                else
+                {
+                    AppManager.entities.Iteams.Remove(temp);
+                    AppManager.entities.SaveChanges();
+                    updateItemView();
+
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Conflicting Data", "Error");
+            }
+        }
+        #endregion
 
 
     }

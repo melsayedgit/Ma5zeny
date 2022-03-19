@@ -54,6 +54,14 @@
             this.Stock_Transfer = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.Reports = new System.Windows.Forms.TabPage();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tabControl1.SuspendLayout();
             this.Managing.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -242,6 +250,14 @@
             // 
             // Items
             // 
+            this.Items.Controls.Add(this.listBox2);
+            this.Items.Controls.Add(this.label11);
+            this.Items.Controls.Add(this.label12);
+            this.Items.Controls.Add(this.textBox5);
+            this.Items.Controls.Add(this.textBox6);
+            this.Items.Controls.Add(this.materialRaisedButton4);
+            this.Items.Controls.Add(this.materialRaisedButton5);
+            this.Items.Controls.Add(this.materialRaisedButton6);
             this.Items.Controls.Add(this.label4);
             this.Items.Location = new System.Drawing.Point(4, 25);
             this.Items.Name = "Items";
@@ -356,6 +372,97 @@
             this.Reports.Text = "Reports";
             this.Reports.UseVisualStyleBackColor = true;
             // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 16;
+            this.listBox2.Location = new System.Drawing.Point(443, 60);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(400, 260);
+            this.listBox2.TabIndex = 16;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(16, 163);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(111, 24);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Item Name";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(23, 111);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 24);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "BarCode";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(133, 166);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(217, 22);
+            this.textBox5.TabIndex = 11;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(133, 111);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(217, 22);
+            this.textBox6.TabIndex = 12;
+            // 
+            // materialRaisedButton4
+            // 
+            this.materialRaisedButton4.AutoSize = true;
+            this.materialRaisedButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton4.Depth = 0;
+            this.materialRaisedButton4.Icon = null;
+            this.materialRaisedButton4.Location = new System.Drawing.Point(237, 259);
+            this.materialRaisedButton4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton4.Name = "materialRaisedButton4";
+            this.materialRaisedButton4.Primary = true;
+            this.materialRaisedButton4.Size = new System.Drawing.Size(82, 36);
+            this.materialRaisedButton4.TabIndex = 7;
+            this.materialRaisedButton4.Text = "Delete";
+            this.materialRaisedButton4.UseVisualStyleBackColor = true;
+            this.materialRaisedButton4.Click += new System.EventHandler(this.materialRaisedButton4_Click);
+            // 
+            // materialRaisedButton5
+            // 
+            this.materialRaisedButton5.AutoSize = true;
+            this.materialRaisedButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton5.Depth = 0;
+            this.materialRaisedButton5.Icon = null;
+            this.materialRaisedButton5.Location = new System.Drawing.Point(128, 259);
+            this.materialRaisedButton5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton5.Name = "materialRaisedButton5";
+            this.materialRaisedButton5.Primary = true;
+            this.materialRaisedButton5.Size = new System.Drawing.Size(87, 36);
+            this.materialRaisedButton5.TabIndex = 8;
+            this.materialRaisedButton5.Text = "Update";
+            this.materialRaisedButton5.UseVisualStyleBackColor = true;
+            this.materialRaisedButton5.Click += new System.EventHandler(this.materialRaisedButton5_Click);
+            // 
+            // materialRaisedButton6
+            // 
+            this.materialRaisedButton6.AutoSize = true;
+            this.materialRaisedButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton6.Depth = 0;
+            this.materialRaisedButton6.Icon = null;
+            this.materialRaisedButton6.Location = new System.Drawing.Point(52, 259);
+            this.materialRaisedButton6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton6.Name = "materialRaisedButton6";
+            this.materialRaisedButton6.Primary = true;
+            this.materialRaisedButton6.Size = new System.Drawing.Size(56, 36);
+            this.materialRaisedButton6.TabIndex = 9;
+            this.materialRaisedButton6.Text = "Add";
+            this.materialRaisedButton6.UseVisualStyleBackColor = true;
+            this.materialRaisedButton6.Click += new System.EventHandler(this.materialRaisedButton6_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -413,5 +520,13 @@
         private System.Windows.Forms.TextBox textBox2;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton5;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton6;
     }
 }
