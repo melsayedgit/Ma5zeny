@@ -39,6 +39,7 @@ namespace Ma5zeny
             updateSuppliersView();
             updateCustomersView();
             updateBuyingView();
+            updateFomtoView();
 
 
 
@@ -674,5 +675,140 @@ namespace Ma5zeny
 
 
         #endregion
+
+        #region Transfer
+         void updateFomtoView()
+        {
+            //comboboxes
+            foreach (var item in AppManager.entities.Warehouses)
+            {
+                comboBox1.Items.Add(item.Name);
+                comboBox2.Items.Add(item.Name);
+
+            }
+
+
+            foreach (var item in AppManager.entities.Warehouses.First().Contains_Items)
+            {
+                listBox7.Items.Add(item.BarCode +","+item.Iteam.Name+ ", amount:" + item.Amount);
+
+
+            }
+            foreach (var item in AppManager.entities.Warehouses.First().Contains_Items)
+            {
+                listBox8.Items.Add(item.BarCode + "," + item.Iteam.Name + ", amount:" + item.Amount);
+
+
+            }
+
+        }
+
+        private void materialRaisedButton19_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int amount = int.Parse(textBox25.Text);
+                var frombarcode = int.Parse(listBox7.SelectedItems[0].ToString().Split(',')[0]);
+                var fromWarehouse = comboBox1.Text;
+                var toWarehouse = comboBox2.Text;
+                var producingDate = dateTimePicker3.Value;
+                var expiryDate = dateTimePicker5.Value;
+                var instockAmount = int.Parse(listBox7.SelectedItems[0].ToString().Split(':')[1]);
+
+                transfer tran = new transfer();
+                tran.amount = amount;
+                tran.transction_id = AppManager.entities.transfers.Count() + 1;
+                tran.from_warehouse = fromWarehouse;
+                tran.to_warehouse = toWarehouse;
+                tran.Producing_Date = producingDate;
+                tran.expiry_Date  = expiryDate;
+                tran.item_barcode = frombarcode;
+                 
+
+                if (amount > instockAmount)
+                {
+                    MessageBox.Show("You don't have enough amount to transefer","insufficient Amount");
+                }
+                else
+                {
+                    AppManager.entities.transfers.Add(tran);
+                    AppManager.entities.Contains_Items.Find(frombarcode,fromWarehouse).Amount -= amount;
+                    
+                    if (AppManager.entities.Contains_Items.Find(frombarcode,toWarehouse) !=null)
+                    {
+                        AppManager.entities.Contains_Items.Find(frombarcode, toWarehouse).Amount += amount;
+                    }
+                    else
+                    {
+                        var contain = new Contains_Items();
+                        contain.BarCode = frombarcode;
+                        contain.Warehouse_Name = toWarehouse;
+                        contain.Amount = amount;
+                        AppManager.entities.Contains_Items.Add(contain);
+
+                    }
+
+                    AppManager.entities.SaveChanges();
+
+
+                listBox7.Items.Clear();
+                foreach (var item in AppManager.entities.Warehouses.Find(comboBox1.Text).Contains_Items)
+                {
+
+                    listBox7.Items.Add(item.BarCode + "," + item.Iteam.Name + ", amount:" + item.Amount);
+
+
+
+                }
+                listBox8.Items.Clear();
+                foreach (var item in AppManager.entities.Warehouses.Find(comboBox2.Text).Contains_Items)
+                {
+
+                    listBox8.Items.Add(item.BarCode + "," + item.Iteam.Name + ", amount:" + item.Amount);
+
+
+                }
+                
+            }
+
+        }
+            catch (Exception)
+            {
+                throw;
+
+                MessageBox.Show("you did not enter a correct value");
+            }
+
+}
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+            listBox7.Items.Clear();
+            foreach (var item in AppManager.entities.Warehouses.Find(comboBox1.Text).Contains_Items)
+            {
+              
+                listBox7.Items.Add(item.BarCode + "," + item.Iteam.Name + ", amount:" + item.Amount);
+
+
+
+            }
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBox8.Items.Clear();
+            foreach (var item in AppManager.entities.Warehouses.Find(comboBox2.Text).Contains_Items)
+            {
+                
+                listBox8.Items.Add(item.BarCode + "," + item.Iteam.Name + ", amount:" + item.Amount);
+
+
+            }
+        }
+        #endregion
+
+
     }
 }

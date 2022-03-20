@@ -118,6 +118,9 @@
     <Compile Include="Supplier.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="transfer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Warehouse.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

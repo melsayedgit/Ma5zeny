@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="WarehouseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="WarehouseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Buying_includes">
           <Key>
             <PropertyRef Name="Order_number" />
@@ -28,11 +28,11 @@
         <EntityType Name="Contains_Items">
           <Key>
             <PropertyRef Name="BarCode" />
-            <PropertyRef Name="Itme_Name" />
+            <PropertyRef Name="Warehouse_Name" />
           </Key>
           <Property Name="Amount" Type="int" />
           <Property Name="BarCode" Type="int" Nullable="false" />
-          <Property Name="Itme_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Warehouse_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -97,6 +97,18 @@
           <Property Name="FAX" Type="int" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="Website" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="transfers">
+          <Key>
+            <PropertyRef Name="transction_id" />
+          </Key>
+          <Property Name="transction_id" Type="int" Nullable="false" />
+          <Property Name="from_warehouse" Type="nvarchar" MaxLength="50" />
+          <Property Name="to_warehouse" Type="nvarchar" MaxLength="50" />
+          <Property Name="item_barcode" Type="int" />
+          <Property Name="amount" Type="int" />
+          <Property Name="Producing_Date" Type="date" />
+          <Property Name="expiry_Date" Type="date" />
         </EntityType>
         <EntityType Name="Warehouse">
           <Key>
@@ -174,7 +186,7 @@
               <PropertyRef Name="Name" />
             </Principal>
             <Dependent Role="Contains_Items">
-              <PropertyRef Name="Itme_Name" />
+              <PropertyRef Name="Warehouse_Name" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -250,6 +262,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_transfers_Iteam">
+          <End Role="Iteam" Type="Self.Iteam" Multiplicity="0..1" />
+          <End Role="transfers" Type="Self.transfers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Iteam">
+              <PropertyRef Name="BarCode" />
+            </Principal>
+            <Dependent Role="transfers">
+              <PropertyRef Name="item_barcode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transfers_Warehouse">
+          <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="0..1" />
+          <End Role="transfers" Type="Self.transfers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Warehouse">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="transfers">
+              <PropertyRef Name="from_warehouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transfers_Warehouse1">
+          <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="0..1" />
+          <End Role="transfers" Type="Self.transfers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Warehouse">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="transfers">
+              <PropertyRef Name="to_warehouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="WarehouseModelStoreContainer">
           <EntitySet Name="Buying_includes" EntityType="Self.Buying_includes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Buying_Invoice" EntityType="Self.Buying_Invoice" Schema="dbo" store:Type="Tables" />
@@ -261,6 +309,7 @@
           <EntitySet Name="Selling_includes" EntityType="Self.Selling_includes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Selling_Invoice" EntityType="Self.Selling_Invoice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="transfers" EntityType="Self.transfers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Buying_in__BarCo__3E52440B" Association="Self.FK__Buying_in__BarCo__3E52440B">
             <End Role="Iteam" EntitySet="Iteam" />
@@ -310,12 +359,107 @@
             <End Role="Manger" EntitySet="Manger" />
             <End Role="Warehouse" EntitySet="Warehouse" />
           </AssociationSet>
+          <AssociationSet Name="FK_transfers_Iteam" Association="Self.FK_transfers_Iteam">
+            <End Role="Iteam" EntitySet="Iteam" />
+            <End Role="transfers" EntitySet="transfers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transfers_Warehouse" Association="Self.FK_transfers_Warehouse">
+            <End Role="Warehouse" EntitySet="Warehouse" />
+            <End Role="transfers" EntitySet="transfers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transfers_Warehouse1" Association="Self.FK_transfers_Warehouse1">
+            <End Role="Warehouse" EntitySet="Warehouse" />
+            <End Role="transfers" EntitySet="transfers" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WarehouseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Manger">
+          <Key>
+            <PropertyRef Name="Manger_id" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Manger_id" Type="Int32" Nullable="false" />
+          <Property Name="Usename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Warehouses" Relationship="WarehouseModel.FK__Warehouse__Mange__2F10007B" FromRole="Manger" ToRole="Warehouse" />
+        </EntityType>
+        <EntityContainer Name="WarehouseEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Mangers" EntityType="Self.Manger" />
+          <EntitySet Name="Buying_includes" EntityType="WarehouseModel.Buying_includes" />
+          <EntitySet Name="Buying_Invoice" EntityType="WarehouseModel.Buying_Invoice" />
+          <EntitySet Name="Contains_Items" EntityType="WarehouseModel.Contains_Items" />
+          <EntitySet Name="Customers" EntityType="WarehouseModel.Customer" />
+          <EntitySet Name="Iteams" EntityType="WarehouseModel.Iteam" />
+          <EntitySet Name="Iteam_Measuring_unit" EntityType="WarehouseModel.Iteam_Measuring_unit" />
+          <EntitySet Name="Selling_includes" EntityType="WarehouseModel.Selling_includes" />
+          <EntitySet Name="Selling_Invoice" EntityType="WarehouseModel.Selling_Invoice" />
+          <EntitySet Name="Suppliers" EntityType="WarehouseModel.Supplier" />
+          <EntitySet Name="Warehouses" EntityType="WarehouseModel.Warehouse" />
+          <AssociationSet Name="FK__Buying_in__BarCo__3E52440B" Association="WarehouseModel.FK__Buying_in__BarCo__3E52440B">
+            <End Role="Iteam" EntitySet="Iteams" />
+            <End Role="Buying_includes" EntitySet="Buying_includes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Buying_in__Order__3D5E1FD2" Association="WarehouseModel.FK__Buying_in__Order__3D5E1FD2">
+            <End Role="Buying_Invoice" EntitySet="Buying_Invoice" />
+            <End Role="Buying_includes" EntitySet="Buying_includes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Buying_In__Suppl__32E0915F" Association="WarehouseModel.FK__Buying_In__Suppl__32E0915F">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="Buying_Invoice" EntitySet="Buying_Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Buying_In__Wareh__31EC6D26" Association="WarehouseModel.FK__Buying_In__Wareh__31EC6D26">
+            <End Role="Warehouse" EntitySet="Warehouses" />
+            <End Role="Buying_Invoice" EntitySet="Buying_Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Contains___BarCo__398D8EEE" Association="WarehouseModel.FK__Contains___BarCo__398D8EEE">
+            <End Role="Iteam" EntitySet="Iteams" />
+            <End Role="Contains_Items" EntitySet="Contains_Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Contains___Itme___3A81B327" Association="WarehouseModel.FK__Contains___Itme___3A81B327">
+            <End Role="Warehouse" EntitySet="Warehouses" />
+            <End Role="Contains_Items" EntitySet="Contains_Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Selling_I__Custo__36B12243" Association="WarehouseModel.FK__Selling_I__Custo__36B12243">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Selling_Invoice" EntitySet="Selling_Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Iteam_Mea__BarCo__2C3393D0" Association="WarehouseModel.FK__Iteam_Mea__BarCo__2C3393D0">
+            <End Role="Iteam" EntitySet="Iteams" />
+            <End Role="Iteam_Measuring_unit" EntitySet="Iteam_Measuring_unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Selling_i__BarCo__4222D4EF" Association="WarehouseModel.FK__Selling_i__BarCo__4222D4EF">
+            <End Role="Iteam" EntitySet="Iteams" />
+            <End Role="Selling_includes" EntitySet="Selling_includes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Mange__2F10007B" Association="WarehouseModel.FK__Warehouse__Mange__2F10007B">
+            <End Role="Manger" EntitySet="Mangers" />
+            <End Role="Warehouse" EntitySet="Warehouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Selling_i__Order__412EB0B6" Association="WarehouseModel.FK__Selling_i__Order__412EB0B6">
+            <End Role="Selling_Invoice" EntitySet="Selling_Invoice" />
+            <End Role="Selling_includes" EntitySet="Selling_includes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Selling_In__Name__35BCFE0A" Association="WarehouseModel.FK__Selling_In__Name__35BCFE0A">
+            <End Role="Warehouse" EntitySet="Warehouses" />
+            <End Role="Selling_Invoice" EntitySet="Selling_Invoice" />
+          </AssociationSet>
+          <EntitySet Name="transfers" EntityType="WarehouseModel.transfer" />
+          <AssociationSet Name="FK_transfers_Iteam" Association="WarehouseModel.FK_transfers_Iteam">
+            <End Role="Iteam" EntitySet="Iteams" />
+            <End Role="transfer" EntitySet="transfers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transfers_Warehouse" Association="WarehouseModel.FK_transfers_Warehouse">
+            <End Role="Warehouse" EntitySet="Warehouses" />
+            <End Role="transfer" EntitySet="transfers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transfers_Warehouse1" Association="WarehouseModel.FK_transfers_Warehouse1">
+            <End Role="Warehouse" EntitySet="Warehouses" />
+            <End Role="transfer" EntitySet="transfers" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="Buying_includes">
           <Key>
             <PropertyRef Name="Order_number" />
@@ -324,8 +468,8 @@
           <Property Name="Amount" Type="Int32" />
           <Property Name="Order_number" Type="Int32" Nullable="false" />
           <Property Name="BarCode" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Iteam" Relationship="Self.FK__Buying_in__BarCo__3E52440B" FromRole="Buying_includes" ToRole="Iteam" />
-          <NavigationProperty Name="Buying_Invoice" Relationship="Self.FK__Buying_in__Order__3D5E1FD2" FromRole="Buying_includes" ToRole="Buying_Invoice" />
+          <NavigationProperty Name="Iteam" Relationship="WarehouseModel.FK__Buying_in__BarCo__3E52440B" FromRole="Buying_includes" ToRole="Iteam" />
+          <NavigationProperty Name="Buying_Invoice" Relationship="WarehouseModel.FK__Buying_in__Order__3D5E1FD2" FromRole="Buying_includes" ToRole="Buying_Invoice" />
         </EntityType>
         <EntityType Name="Buying_Invoice">
           <Key>
@@ -337,20 +481,20 @@
           <Property Name="expiry_count_days" Type="Int32" />
           <Property Name="Warehouse_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Supplier_D" Type="Int32" />
-          <NavigationProperty Name="Buying_includes" Relationship="Self.FK__Buying_in__Order__3D5E1FD2" FromRole="Buying_Invoice" ToRole="Buying_includes" />
-          <NavigationProperty Name="Supplier" Relationship="Self.FK__Buying_In__Suppl__32E0915F" FromRole="Buying_Invoice" ToRole="Supplier" />
-          <NavigationProperty Name="Warehouse" Relationship="Self.FK__Buying_In__Wareh__31EC6D26" FromRole="Buying_Invoice" ToRole="Warehouse" />
+          <NavigationProperty Name="Buying_includes" Relationship="WarehouseModel.FK__Buying_in__Order__3D5E1FD2" FromRole="Buying_Invoice" ToRole="Buying_includes" />
+          <NavigationProperty Name="Supplier" Relationship="WarehouseModel.FK__Buying_In__Suppl__32E0915F" FromRole="Buying_Invoice" ToRole="Supplier" />
+          <NavigationProperty Name="Warehouse" Relationship="WarehouseModel.FK__Buying_In__Wareh__31EC6D26" FromRole="Buying_Invoice" ToRole="Warehouse" />
         </EntityType>
         <EntityType Name="Contains_Items">
           <Key>
             <PropertyRef Name="BarCode" />
-            <PropertyRef Name="Itme_Name" />
+            <PropertyRef Name="Warehouse_Name" />
           </Key>
           <Property Name="Amount" Type="Int32" />
           <Property Name="BarCode" Type="Int32" Nullable="false" />
-          <Property Name="Itme_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Iteam" Relationship="Self.FK__Contains___BarCo__398D8EEE" FromRole="Contains_Items" ToRole="Iteam" />
-          <NavigationProperty Name="Warehouse" Relationship="Self.FK__Contains___Itme___3A81B327" FromRole="Contains_Items" ToRole="Warehouse" />
+          <Property Name="Warehouse_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Iteam" Relationship="WarehouseModel.FK__Contains___BarCo__398D8EEE" FromRole="Contains_Items" ToRole="Iteam" />
+          <NavigationProperty Name="Warehouse" Relationship="WarehouseModel.FK__Contains___Itme___3A81B327" FromRole="Contains_Items" ToRole="Warehouse" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -362,7 +506,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Selling_Invoice" Relationship="Self.FK__Selling_I__Custo__36B12243" FromRole="Customer" ToRole="Selling_Invoice" />
+          <NavigationProperty Name="Selling_Invoice" Relationship="WarehouseModel.FK__Selling_I__Custo__36B12243" FromRole="Customer" ToRole="Selling_Invoice" />
         </EntityType>
         <EntityType Name="Iteam">
           <Key>
@@ -370,29 +514,20 @@
           </Key>
           <Property Name="BarCode" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Buying_includes" Relationship="Self.FK__Buying_in__BarCo__3E52440B" FromRole="Iteam" ToRole="Buying_includes" />
-          <NavigationProperty Name="Contains_Items" Relationship="Self.FK__Contains___BarCo__398D8EEE" FromRole="Iteam" ToRole="Contains_Items" />
-          <NavigationProperty Name="Iteam_Measuring_unit" Relationship="Self.FK__Iteam_Mea__BarCo__2C3393D0" FromRole="Iteam" ToRole="Iteam_Measuring_unit" />
-          <NavigationProperty Name="Selling_includes" Relationship="Self.FK__Selling_i__BarCo__4222D4EF" FromRole="Iteam" ToRole="Selling_includes" />
+          <NavigationProperty Name="Buying_includes" Relationship="WarehouseModel.FK__Buying_in__BarCo__3E52440B" FromRole="Iteam" ToRole="Buying_includes" />
+          <NavigationProperty Name="Contains_Items" Relationship="WarehouseModel.FK__Contains___BarCo__398D8EEE" FromRole="Iteam" ToRole="Contains_Items" />
+          <NavigationProperty Name="Iteam_Measuring_unit" Relationship="WarehouseModel.FK__Iteam_Mea__BarCo__2C3393D0" FromRole="Iteam" ToRole="Iteam_Measuring_unit" />
+          <NavigationProperty Name="Selling_includes" Relationship="WarehouseModel.FK__Selling_i__BarCo__4222D4EF" FromRole="Iteam" ToRole="Selling_includes" />
+          <NavigationProperty Name="transfers" Relationship="WarehouseModel.FK_transfers_Iteam" FromRole="Iteam" ToRole="transfer" />
         </EntityType>
         <EntityType Name="Iteam_Measuring_unit">
           <Key>
             <PropertyRef Name="Measuring_unit" />
             <PropertyRef Name="BarCode" />
           </Key>
-          <Property Name="Measuring_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Measuring_unit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="BarCode" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Iteam" Relationship="Self.FK__Iteam_Mea__BarCo__2C3393D0" FromRole="Iteam_Measuring_unit" ToRole="Iteam" />
-        </EntityType>
-        <EntityType Name="Manger">
-          <Key>
-            <PropertyRef Name="Manger_id" />
-          </Key>
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Manger_id" Type="Int32" Nullable="false" />
-          <Property Name="Usename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Warehouses" Relationship="Self.FK__Warehouse__Mange__2F10007B" FromRole="Manger" ToRole="Warehouse" />
+          <NavigationProperty Name="Iteam" Relationship="WarehouseModel.FK__Iteam_Mea__BarCo__2C3393D0" FromRole="Iteam_Measuring_unit" ToRole="Iteam" />
         </EntityType>
         <EntityType Name="Selling_includes">
           <Key>
@@ -402,8 +537,8 @@
           <Property Name="Amount" Type="Int32" />
           <Property Name="Order_number" Type="Int32" Nullable="false" />
           <Property Name="BarCode" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Iteam" Relationship="Self.FK__Selling_i__BarCo__4222D4EF" FromRole="Selling_includes" ToRole="Iteam" />
-          <NavigationProperty Name="Selling_Invoice" Relationship="Self.FK__Selling_i__Order__412EB0B6" FromRole="Selling_includes" ToRole="Selling_Invoice" />
+          <NavigationProperty Name="Iteam" Relationship="WarehouseModel.FK__Selling_i__BarCo__4222D4EF" FromRole="Selling_includes" ToRole="Iteam" />
+          <NavigationProperty Name="Selling_Invoice" Relationship="WarehouseModel.FK__Selling_i__Order__412EB0B6" FromRole="Selling_includes" ToRole="Selling_Invoice" />
         </EntityType>
         <EntityType Name="Selling_Invoice">
           <Key>
@@ -413,9 +548,9 @@
           <Property Name="Buying_Date" Type="DateTime" Precision="0" />
           <Property Name="Warehouse_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Customer_ID" Type="Int32" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK__Selling_I__Custo__36B12243" FromRole="Selling_Invoice" ToRole="Customer" />
-          <NavigationProperty Name="Selling_includes" Relationship="Self.FK__Selling_i__Order__412EB0B6" FromRole="Selling_Invoice" ToRole="Selling_includes" />
-          <NavigationProperty Name="Warehouse" Relationship="Self.FK__Selling_In__Name__35BCFE0A" FromRole="Selling_Invoice" ToRole="Warehouse" />
+          <NavigationProperty Name="Customer" Relationship="WarehouseModel.FK__Selling_I__Custo__36B12243" FromRole="Selling_Invoice" ToRole="Customer" />
+          <NavigationProperty Name="Selling_includes" Relationship="WarehouseModel.FK__Selling_i__Order__412EB0B6" FromRole="Selling_Invoice" ToRole="Selling_includes" />
+          <NavigationProperty Name="Warehouse" Relationship="WarehouseModel.FK__Selling_In__Name__35BCFE0A" FromRole="Selling_Invoice" ToRole="Warehouse" />
         </EntityType>
         <EntityType Name="Supplier">
           <Key>
@@ -427,23 +562,25 @@
           <Property Name="FAX" Type="Int32" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Buying_Invoice" Relationship="Self.FK__Buying_In__Suppl__32E0915F" FromRole="Supplier" ToRole="Buying_Invoice" />
+          <NavigationProperty Name="Buying_Invoice" Relationship="WarehouseModel.FK__Buying_In__Suppl__32E0915F" FromRole="Supplier" ToRole="Buying_Invoice" />
         </EntityType>
         <EntityType Name="Warehouse">
           <Key>
             <PropertyRef Name="Name" />
           </Key>
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Manger_id" Type="Int32" />
-          <NavigationProperty Name="Buying_Invoice" Relationship="Self.FK__Buying_In__Wareh__31EC6D26" FromRole="Warehouse" ToRole="Buying_Invoice" />
-          <NavigationProperty Name="Contains_Items" Relationship="Self.FK__Contains___Itme___3A81B327" FromRole="Warehouse" ToRole="Contains_Items" />
-          <NavigationProperty Name="Manger" Relationship="Self.FK__Warehouse__Mange__2F10007B" FromRole="Warehouse" ToRole="Manger" />
-          <NavigationProperty Name="Selling_Invoice" Relationship="Self.FK__Selling_In__Name__35BCFE0A" FromRole="Warehouse" ToRole="Selling_Invoice" />
+          <NavigationProperty Name="Buying_Invoice" Relationship="WarehouseModel.FK__Buying_In__Wareh__31EC6D26" FromRole="Warehouse" ToRole="Buying_Invoice" />
+          <NavigationProperty Name="Contains_Items" Relationship="WarehouseModel.FK__Contains___Itme___3A81B327" FromRole="Warehouse" ToRole="Contains_Items" />
+          <NavigationProperty Name="Manger" Relationship="WarehouseModel.FK__Warehouse__Mange__2F10007B" FromRole="Warehouse" ToRole="Manger" />
+          <NavigationProperty Name="Selling_Invoice" Relationship="WarehouseModel.FK__Selling_In__Name__35BCFE0A" FromRole="Warehouse" ToRole="Selling_Invoice" />
+          <NavigationProperty Name="transfers" Relationship="WarehouseModel.FK_transfers_Warehouse" FromRole="Warehouse" ToRole="transfer" />
+          <NavigationProperty Name="transfers1" Relationship="WarehouseModel.FK_transfers_Warehouse1" FromRole="Warehouse" ToRole="transfer" />
         </EntityType>
         <Association Name="FK__Buying_in__BarCo__3E52440B">
-          <End Role="Iteam" Type="Self.Iteam" Multiplicity="1" />
-          <End Role="Buying_includes" Type="Self.Buying_includes" Multiplicity="*" />
+          <End Type="WarehouseModel.Iteam" Role="Iteam" Multiplicity="1" />
+          <End Type="WarehouseModel.Buying_includes" Role="Buying_includes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Iteam">
               <PropertyRef Name="BarCode" />
@@ -454,8 +591,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Buying_in__Order__3D5E1FD2">
-          <End Role="Buying_Invoice" Type="Self.Buying_Invoice" Multiplicity="1" />
-          <End Role="Buying_includes" Type="Self.Buying_includes" Multiplicity="*" />
+          <End Type="WarehouseModel.Buying_Invoice" Role="Buying_Invoice" Multiplicity="1" />
+          <End Type="WarehouseModel.Buying_includes" Role="Buying_includes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Buying_Invoice">
               <PropertyRef Name="Order_number" />
@@ -466,8 +603,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Buying_In__Suppl__32E0915F">
-          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
-          <End Role="Buying_Invoice" Type="Self.Buying_Invoice" Multiplicity="*" />
+          <End Type="WarehouseModel.Supplier" Role="Supplier" Multiplicity="0..1" />
+          <End Type="WarehouseModel.Buying_Invoice" Role="Buying_Invoice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Supplier">
               <PropertyRef Name="ID" />
@@ -478,8 +615,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Buying_In__Wareh__31EC6D26">
-          <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="0..1" />
-          <End Role="Buying_Invoice" Type="Self.Buying_Invoice" Multiplicity="*" />
+          <End Type="WarehouseModel.Warehouse" Role="Warehouse" Multiplicity="0..1" />
+          <End Type="WarehouseModel.Buying_Invoice" Role="Buying_Invoice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Warehouse">
               <PropertyRef Name="Name" />
@@ -490,8 +627,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Contains___BarCo__398D8EEE">
-          <End Role="Iteam" Type="Self.Iteam" Multiplicity="1" />
-          <End Role="Contains_Items" Type="Self.Contains_Items" Multiplicity="*" />
+          <End Type="WarehouseModel.Iteam" Role="Iteam" Multiplicity="1" />
+          <End Type="WarehouseModel.Contains_Items" Role="Contains_Items" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Iteam">
               <PropertyRef Name="BarCode" />
@@ -502,20 +639,20 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Contains___Itme___3A81B327">
-          <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
-          <End Role="Contains_Items" Type="Self.Contains_Items" Multiplicity="*" />
+          <End Type="WarehouseModel.Warehouse" Role="Warehouse" Multiplicity="1" />
+          <End Type="WarehouseModel.Contains_Items" Role="Contains_Items" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Warehouse">
               <PropertyRef Name="Name" />
             </Principal>
             <Dependent Role="Contains_Items">
-              <PropertyRef Name="Itme_Name" />
+              <PropertyRef Name="Warehouse_Name" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Selling_I__Custo__36B12243">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
-          <End Role="Selling_Invoice" Type="Self.Selling_Invoice" Multiplicity="*" />
+          <End Type="WarehouseModel.Customer" Role="Customer" Multiplicity="0..1" />
+          <End Type="WarehouseModel.Selling_Invoice" Role="Selling_Invoice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
               <PropertyRef Name="ID" />
@@ -526,8 +663,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Iteam_Mea__BarCo__2C3393D0">
-          <End Role="Iteam" Type="Self.Iteam" Multiplicity="1" />
-          <End Role="Iteam_Measuring_unit" Type="Self.Iteam_Measuring_unit" Multiplicity="*" />
+          <End Type="WarehouseModel.Iteam" Role="Iteam" Multiplicity="1" />
+          <End Type="WarehouseModel.Iteam_Measuring_unit" Role="Iteam_Measuring_unit" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Iteam">
               <PropertyRef Name="BarCode" />
@@ -538,8 +675,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Selling_i__BarCo__4222D4EF">
-          <End Role="Iteam" Type="Self.Iteam" Multiplicity="1" />
-          <End Role="Selling_includes" Type="Self.Selling_includes" Multiplicity="*" />
+          <End Type="WarehouseModel.Iteam" Role="Iteam" Multiplicity="1" />
+          <End Type="WarehouseModel.Selling_includes" Role="Selling_includes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Iteam">
               <PropertyRef Name="BarCode" />
@@ -550,8 +687,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Warehouse__Mange__2F10007B">
-          <End Role="Manger" Type="Self.Manger" Multiplicity="0..1" />
-          <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="*" />
+          <End Type="WarehouseModel.Manger" Role="Manger" Multiplicity="0..1" />
+          <End Type="WarehouseModel.Warehouse" Role="Warehouse" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Manger">
               <PropertyRef Name="Manger_id" />
@@ -562,8 +699,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Selling_i__Order__412EB0B6">
-          <End Role="Selling_Invoice" Type="Self.Selling_Invoice" Multiplicity="1" />
-          <End Role="Selling_includes" Type="Self.Selling_includes" Multiplicity="*" />
+          <End Type="WarehouseModel.Selling_Invoice" Role="Selling_Invoice" Multiplicity="1" />
+          <End Type="WarehouseModel.Selling_includes" Role="Selling_includes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Selling_Invoice">
               <PropertyRef Name="Order_number" />
@@ -574,8 +711,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Selling_In__Name__35BCFE0A">
-          <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="0..1" />
-          <End Role="Selling_Invoice" Type="Self.Selling_Invoice" Multiplicity="*" />
+          <End Type="WarehouseModel.Warehouse" Role="Warehouse" Multiplicity="0..1" />
+          <End Type="WarehouseModel.Selling_Invoice" Role="Selling_Invoice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Warehouse">
               <PropertyRef Name="Name" />
@@ -585,131 +722,63 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="WarehouseEntities3" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Buying_includes" EntityType="Self.Buying_includes" />
-          <EntitySet Name="Buying_Invoice" EntityType="Self.Buying_Invoice" />
-          <EntitySet Name="Contains_Items" EntityType="Self.Contains_Items" />
-          <EntitySet Name="Customers" EntityType="Self.Customer" />
-          <EntitySet Name="Iteams" EntityType="Self.Iteam" />
-          <EntitySet Name="Iteam_Measuring_unit" EntityType="Self.Iteam_Measuring_unit" />
-          <EntitySet Name="Mangers" EntityType="Self.Manger" />
-          <EntitySet Name="Selling_includes" EntityType="Self.Selling_includes" />
-          <EntitySet Name="Selling_Invoice" EntityType="Self.Selling_Invoice" />
-          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
-          <EntitySet Name="Warehouses" EntityType="Self.Warehouse" />
-          <AssociationSet Name="FK__Buying_in__BarCo__3E52440B" Association="Self.FK__Buying_in__BarCo__3E52440B">
-            <End Role="Iteam" EntitySet="Iteams" />
-            <End Role="Buying_includes" EntitySet="Buying_includes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Buying_in__Order__3D5E1FD2" Association="Self.FK__Buying_in__Order__3D5E1FD2">
-            <End Role="Buying_Invoice" EntitySet="Buying_Invoice" />
-            <End Role="Buying_includes" EntitySet="Buying_includes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Buying_In__Suppl__32E0915F" Association="Self.FK__Buying_In__Suppl__32E0915F">
-            <End Role="Supplier" EntitySet="Suppliers" />
-            <End Role="Buying_Invoice" EntitySet="Buying_Invoice" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Buying_In__Wareh__31EC6D26" Association="Self.FK__Buying_In__Wareh__31EC6D26">
-            <End Role="Warehouse" EntitySet="Warehouses" />
-            <End Role="Buying_Invoice" EntitySet="Buying_Invoice" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Contains___BarCo__398D8EEE" Association="Self.FK__Contains___BarCo__398D8EEE">
-            <End Role="Iteam" EntitySet="Iteams" />
-            <End Role="Contains_Items" EntitySet="Contains_Items" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Contains___Itme___3A81B327" Association="Self.FK__Contains___Itme___3A81B327">
-            <End Role="Warehouse" EntitySet="Warehouses" />
-            <End Role="Contains_Items" EntitySet="Contains_Items" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Selling_I__Custo__36B12243" Association="Self.FK__Selling_I__Custo__36B12243">
-            <End Role="Customer" EntitySet="Customers" />
-            <End Role="Selling_Invoice" EntitySet="Selling_Invoice" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Iteam_Mea__BarCo__2C3393D0" Association="Self.FK__Iteam_Mea__BarCo__2C3393D0">
-            <End Role="Iteam" EntitySet="Iteams" />
-            <End Role="Iteam_Measuring_unit" EntitySet="Iteam_Measuring_unit" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Selling_i__BarCo__4222D4EF" Association="Self.FK__Selling_i__BarCo__4222D4EF">
-            <End Role="Iteam" EntitySet="Iteams" />
-            <End Role="Selling_includes" EntitySet="Selling_includes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Mange__2F10007B" Association="Self.FK__Warehouse__Mange__2F10007B">
-            <End Role="Manger" EntitySet="Mangers" />
-            <End Role="Warehouse" EntitySet="Warehouses" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Selling_i__Order__412EB0B6" Association="Self.FK__Selling_i__Order__412EB0B6">
-            <End Role="Selling_Invoice" EntitySet="Selling_Invoice" />
-            <End Role="Selling_includes" EntitySet="Selling_includes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Selling_In__Name__35BCFE0A" Association="Self.FK__Selling_In__Name__35BCFE0A">
-            <End Role="Warehouse" EntitySet="Warehouses" />
-            <End Role="Selling_Invoice" EntitySet="Selling_Invoice" />
-          </AssociationSet>
-        </EntityContainer>
+        <EntityType Name="transfer">
+          <Key>
+            <PropertyRef Name="transction_id" />
+          </Key>
+          <Property Name="transction_id" Type="Int32" Nullable="false" />
+          <Property Name="from_warehouse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="to_warehouse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="item_barcode" Type="Int32" />
+          <Property Name="amount" Type="Int32" />
+          <Property Name="Producing_Date" Type="DateTime" Precision="0" />
+          <Property Name="expiry_Date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Iteam" Relationship="WarehouseModel.FK_transfers_Iteam" FromRole="transfer" ToRole="Iteam" />
+          <NavigationProperty Name="Warehouse" Relationship="WarehouseModel.FK_transfers_Warehouse" FromRole="transfer" ToRole="Warehouse" />
+          <NavigationProperty Name="Warehouse1" Relationship="WarehouseModel.FK_transfers_Warehouse1" FromRole="transfer" ToRole="Warehouse" />
+        </EntityType>
+        <Association Name="FK_transfers_Iteam">
+          <End Type="WarehouseModel.Iteam" Role="Iteam" Multiplicity="0..1" />
+          <End Type="WarehouseModel.transfer" Role="transfer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Iteam">
+              <PropertyRef Name="BarCode" />
+            </Principal>
+            <Dependent Role="transfer">
+              <PropertyRef Name="item_barcode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transfers_Warehouse">
+          <End Type="WarehouseModel.Warehouse" Role="Warehouse" Multiplicity="0..1" />
+          <End Type="WarehouseModel.transfer" Role="transfer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Warehouse">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="transfer">
+              <PropertyRef Name="from_warehouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transfers_Warehouse1">
+          <End Type="WarehouseModel.Warehouse" Role="Warehouse" Multiplicity="0..1" />
+          <End Type="WarehouseModel.transfer" Role="transfer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Warehouse">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="transfer">
+              <PropertyRef Name="to_warehouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="WarehouseModelStoreContainer" CdmEntityContainer="WarehouseEntities3">
-          <EntitySetMapping Name="Buying_includes">
-            <EntityTypeMapping TypeName="WarehouseModel.Buying_includes">
-              <MappingFragment StoreEntitySet="Buying_includes">
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="Order_number" ColumnName="Order_number" />
-                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Buying_Invoice">
-            <EntityTypeMapping TypeName="WarehouseModel.Buying_Invoice">
-              <MappingFragment StoreEntitySet="Buying_Invoice">
-                <ScalarProperty Name="Order_number" ColumnName="Order_number" />
-                <ScalarProperty Name="Buying_Date" ColumnName="Buying_Date" />
-                <ScalarProperty Name="producing_Date" ColumnName="producing_Date" />
-                <ScalarProperty Name="expiry_count_days" ColumnName="expiry_count_days" />
-                <ScalarProperty Name="Warehouse_Name" ColumnName="Warehouse_Name" />
-                <ScalarProperty Name="Supplier_D" ColumnName="Supplier_D" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Contains_Items">
-            <EntityTypeMapping TypeName="WarehouseModel.Contains_Items">
-              <MappingFragment StoreEntitySet="Contains_Items">
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
-                <ScalarProperty Name="Itme_Name" ColumnName="Itme_Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="WarehouseModel.Customer">
-              <MappingFragment StoreEntitySet="Customer">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="FAX" ColumnName="FAX" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Website" ColumnName="Website" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Iteams">
-            <EntityTypeMapping TypeName="WarehouseModel.Iteam">
-              <MappingFragment StoreEntitySet="Iteam">
-                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Iteam_Measuring_unit">
-            <EntityTypeMapping TypeName="WarehouseModel.Iteam_Measuring_unit">
-              <MappingFragment StoreEntitySet="Iteam_Measuring_unit">
-                <ScalarProperty Name="Measuring_unit" ColumnName="Measuring_unit" />
-                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Mangers">
             <EntityTypeMapping TypeName="WarehouseModel.Manger">
               <MappingFragment StoreEntitySet="Manger">
@@ -720,47 +789,118 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Buying_includes">
+            <EntityTypeMapping TypeName="WarehouseModel.Buying_includes">
+              <MappingFragment StoreEntitySet="Buying_includes">
+                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+                <ScalarProperty Name="Order_number" ColumnName="Order_number" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Buying_Invoice">
+            <EntityTypeMapping TypeName="WarehouseModel.Buying_Invoice">
+              <MappingFragment StoreEntitySet="Buying_Invoice">
+                <ScalarProperty Name="Supplier_D" ColumnName="Supplier_D" />
+                <ScalarProperty Name="Warehouse_Name" ColumnName="Warehouse_Name" />
+                <ScalarProperty Name="expiry_count_days" ColumnName="expiry_count_days" />
+                <ScalarProperty Name="producing_Date" ColumnName="producing_Date" />
+                <ScalarProperty Name="Buying_Date" ColumnName="Buying_Date" />
+                <ScalarProperty Name="Order_number" ColumnName="Order_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contains_Items">
+            <EntityTypeMapping TypeName="WarehouseModel.Contains_Items">
+              <MappingFragment StoreEntitySet="Contains_Items">
+                <ScalarProperty Name="Warehouse_Name" ColumnName="Warehouse_Name" />
+                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="WarehouseModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Iteams">
+            <EntityTypeMapping TypeName="WarehouseModel.Iteam">
+              <MappingFragment StoreEntitySet="Iteam">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Iteam_Measuring_unit">
+            <EntityTypeMapping TypeName="WarehouseModel.Iteam_Measuring_unit">
+              <MappingFragment StoreEntitySet="Iteam_Measuring_unit">
+                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+                <ScalarProperty Name="Measuring_unit" ColumnName="Measuring_unit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Selling_includes">
             <EntityTypeMapping TypeName="WarehouseModel.Selling_includes">
               <MappingFragment StoreEntitySet="Selling_includes">
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="Order_number" ColumnName="Order_number" />
                 <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+                <ScalarProperty Name="Order_number" ColumnName="Order_number" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Selling_Invoice">
             <EntityTypeMapping TypeName="WarehouseModel.Selling_Invoice">
               <MappingFragment StoreEntitySet="Selling_Invoice">
-                <ScalarProperty Name="Order_number" ColumnName="Order_number" />
-                <ScalarProperty Name="Buying_Date" ColumnName="Buying_Date" />
-                <ScalarProperty Name="Warehouse_Name" ColumnName="Warehouse_Name" />
                 <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Warehouse_Name" ColumnName="Warehouse_Name" />
+                <ScalarProperty Name="Buying_Date" ColumnName="Buying_Date" />
+                <ScalarProperty Name="Order_number" ColumnName="Order_number" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Suppliers">
             <EntityTypeMapping TypeName="WarehouseModel.Supplier">
               <MappingFragment StoreEntitySet="Supplier">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="FAX" ColumnName="FAX" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Warehouses">
             <EntityTypeMapping TypeName="WarehouseModel.Warehouse">
               <MappingFragment StoreEntitySet="Warehouse">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Manger_id" ColumnName="Manger_id" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <EntitySetMapping Name="transfers">
+            <EntityTypeMapping TypeName="WarehouseModel.transfer">
+              <MappingFragment StoreEntitySet="transfers">
+                <ScalarProperty Name="expiry_Date" ColumnName="expiry_Date" />
+                <ScalarProperty Name="Producing_Date" ColumnName="Producing_Date" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="item_barcode" ColumnName="item_barcode" />
+                <ScalarProperty Name="to_warehouse" ColumnName="to_warehouse" />
+                <ScalarProperty Name="from_warehouse" ColumnName="from_warehouse" />
+                <ScalarProperty Name="transction_id" ColumnName="transction_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

@@ -21,6 +21,7 @@ namespace Ma5zeny
             this.Contains_Items = new HashSet<Contains_Items>();
             this.Iteam_Measuring_unit = new HashSet<Iteam_Measuring_unit>();
             this.Selling_includes = new HashSet<Selling_includes>();
+            this.transfers = new HashSet<transfer>();
         }
     
         public int BarCode { get; set; }
@@ -34,5 +35,7 @@ namespace Ma5zeny
         public virtual ICollection<Iteam_Measuring_unit> Iteam_Measuring_unit { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Selling_includes> Selling_includes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<transfer> transfers { get; set; }
     }
 }

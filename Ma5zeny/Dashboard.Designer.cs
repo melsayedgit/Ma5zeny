@@ -125,6 +125,19 @@
             this.Stock_Transfer = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.Reports = new System.Windows.Forms.TabPage();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.listBox7 = new System.Windows.Forms.ListBox();
+            this.listBox8 = new System.Windows.Forms.ListBox();
+            this.materialRaisedButton19 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label37 = new System.Windows.Forms.Label();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Managing.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -1242,6 +1255,19 @@
             // 
             // Stock_Transfer
             // 
+            this.Stock_Transfer.Controls.Add(this.label39);
+            this.Stock_Transfer.Controls.Add(this.label38);
+            this.Stock_Transfer.Controls.Add(this.dateTimePicker5);
+            this.Stock_Transfer.Controls.Add(this.dateTimePicker3);
+            this.Stock_Transfer.Controls.Add(this.textBox25);
+            this.Stock_Transfer.Controls.Add(this.label37);
+            this.Stock_Transfer.Controls.Add(this.materialRaisedButton19);
+            this.Stock_Transfer.Controls.Add(this.listBox8);
+            this.Stock_Transfer.Controls.Add(this.listBox7);
+            this.Stock_Transfer.Controls.Add(this.comboBox2);
+            this.Stock_Transfer.Controls.Add(this.comboBox1);
+            this.Stock_Transfer.Controls.Add(this.label35);
+            this.Stock_Transfer.Controls.Add(this.label34);
             this.Stock_Transfer.Controls.Add(this.label6);
             this.Stock_Transfer.ForeColor = System.Drawing.Color.Coral;
             this.Stock_Transfer.Location = new System.Drawing.Point(4, 25);
@@ -1257,7 +1283,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Salmon;
-            this.label6.Location = new System.Drawing.Point(368, 0);
+            this.label6.Location = new System.Drawing.Point(382, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(212, 39);
             this.label6.TabIndex = 5;
@@ -1272,6 +1298,131 @@
             this.Reports.TabIndex = 1;
             this.Reports.Text = "Reports";
             this.Reports.UseVisualStyleBackColor = true;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe Script", 28.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(44, 46);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(177, 74);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "From:";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Segoe Script", 28.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(533, 46);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(103, 74);
+            this.label35.TabIndex = 6;
+            this.label35.Text = "To:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Agency FB", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(227, 71);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(309, 36);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Agency FB", 13.8F);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(642, 71);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(322, 36);
+            this.comboBox2.TabIndex = 7;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // listBox7
+            // 
+            this.listBox7.FormattingEnabled = true;
+            this.listBox7.ItemHeight = 16;
+            this.listBox7.Location = new System.Drawing.Point(239, 136);
+            this.listBox7.Name = "listBox7";
+            this.listBox7.Size = new System.Drawing.Size(280, 244);
+            this.listBox7.TabIndex = 8;
+            // 
+            // listBox8
+            // 
+            this.listBox8.FormattingEnabled = true;
+            this.listBox8.ItemHeight = 16;
+            this.listBox8.Location = new System.Drawing.Point(658, 136);
+            this.listBox8.Name = "listBox8";
+            this.listBox8.Size = new System.Drawing.Size(280, 244);
+            this.listBox8.TabIndex = 8;
+            // 
+            // materialRaisedButton19
+            // 
+            this.materialRaisedButton19.AutoSize = true;
+            this.materialRaisedButton19.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton19.Depth = 0;
+            this.materialRaisedButton19.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialRaisedButton19.Icon = null;
+            this.materialRaisedButton19.Location = new System.Drawing.Point(67, 327);
+            this.materialRaisedButton19.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton19.Name = "materialRaisedButton19";
+            this.materialRaisedButton19.Primary = true;
+            this.materialRaisedButton19.Size = new System.Drawing.Size(107, 36);
+            this.materialRaisedButton19.TabIndex = 9;
+            this.materialRaisedButton19.Text = "Transfer";
+            this.materialRaisedButton19.UseVisualStyleBackColor = true;
+            this.materialRaisedButton19.Click += new System.EventHandler(this.materialRaisedButton19_Click);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(56, 120);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(118, 36);
+            this.label37.TabIndex = 10;
+            this.label37.Text = "Amount";
+            // 
+            // textBox25
+            // 
+            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox25.Location = new System.Drawing.Point(62, 159);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(107, 38);
+            this.textBox25.TabIndex = 11;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(21, 226);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker3.TabIndex = 12;
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.Location = new System.Drawing.Point(21, 281);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker5.TabIndex = 13;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(69, 207);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(100, 16);
+            this.label38.TabIndex = 14;
+            this.label38.Text = "Producing Date";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(98, 262);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(44, 16);
+            this.label39.TabIndex = 15;
+            this.label39.Text = "Expiry";
             // 
             // Dashboard
             // 
@@ -1407,5 +1558,18 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton16;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton17;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton18;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton19;
+        private System.Windows.Forms.ListBox listBox8;
+        private System.Windows.Forms.ListBox listBox7;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.DateTimePicker dateTimePicker5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
     }
 }

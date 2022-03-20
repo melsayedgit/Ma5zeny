@@ -25,16 +25,17 @@ namespace Ma5zeny
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Manger> Mangers { get; set; }
         public virtual DbSet<Buying_includes> Buying_includes { get; set; }
         public virtual DbSet<Buying_Invoice> Buying_Invoice { get; set; }
         public virtual DbSet<Contains_Items> Contains_Items { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Iteam> Iteams { get; set; }
         public virtual DbSet<Iteam_Measuring_unit> Iteam_Measuring_unit { get; set; }
-        public virtual DbSet<Manger> Mangers { get; set; }
         public virtual DbSet<Selling_includes> Selling_includes { get; set; }
         public virtual DbSet<Selling_Invoice> Selling_Invoice { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<Warehouse> Warehouses { get; set; }
+        public virtual DbSet<transfer> transfers { get; set; }
     }
 }

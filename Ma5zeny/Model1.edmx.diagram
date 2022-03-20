@@ -4,31 +4,35 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9064c47104dc4400b5b6efa16f921f5b" Name="Diagram1">
-        <EntityTypeShape EntityType="WarehouseModel.Buying_includes" Width="1.5" PointX="7.5" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="WarehouseModel.Buying_Invoice" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="WarehouseModel.Contains_Items" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="WarehouseModel.Customer" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WarehouseModel.Iteam" Width="1.5" PointX="8.25" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="WarehouseModel.Iteam_Measuring_unit" Width="1.5" PointX="10.5" PointY="11.125" IsExpanded="true" />
+      <Diagram DiagramId="9064c47104dc4400b5b6efa16f921f5b" Name="Diagram1" ZoomLevel="92">
         <EntityTypeShape EntityType="WarehouseModel.Manger" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="WarehouseModel.Selling_includes" Width="1.5" PointX="10.5" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="WarehouseModel.Selling_Invoice" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WarehouseModel.Supplier" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WarehouseModel.Warehouse" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="WarehouseModel.FK__Buying_in__BarCo__3E52440B" ManuallyRouted="false" />
-        <AssociationConnector Association="WarehouseModel.FK__Buying_in__Order__3D5E1FD2" ManuallyRouted="false" />
-        <AssociationConnector Association="WarehouseModel.FK__Buying_In__Suppl__32E0915F" ManuallyRouted="false" />
-        <AssociationConnector Association="WarehouseModel.FK__Buying_In__Wareh__31EC6D26" ManuallyRouted="false" />
-        <AssociationConnector Association="WarehouseModel.FK__Contains___BarCo__398D8EEE" ManuallyRouted="false" />
-        <AssociationConnector Association="WarehouseModel.FK__Contains___Itme___3A81B327" ManuallyRouted="false" />
-        <AssociationConnector Association="WarehouseModel.FK__Selling_I__Custo__36B12243" ManuallyRouted="false" />
-        <AssociationConnector Association="WarehouseModel.FK__Iteam_Mea__BarCo__2C3393D0" ManuallyRouted="false" />
-        <AssociationConnector Association="WarehouseModel.FK__Selling_i__BarCo__4222D4EF" ManuallyRouted="false" />
-        <AssociationConnector Association="WarehouseModel.FK__Warehouse__Mange__2F10007B" ManuallyRouted="false" />
-        <AssociationConnector Association="WarehouseModel.FK__Selling_i__Order__412EB0B6" ManuallyRouted="false" />
-        <AssociationConnector Association="WarehouseModel.FK__Selling_In__Name__35BCFE0A" ManuallyRouted="false" />
-      </Diagram>
+        <EntityTypeShape EntityType="WarehouseModel.Buying_includes" Width="1.5" PointX="10.5" PointY="4.875" />
+        <EntityTypeShape EntityType="WarehouseModel.Buying_Invoice" Width="1.5" PointX="8.25" PointY="4.5" />
+        <EntityTypeShape EntityType="WarehouseModel.Contains_Items" Width="1.5" PointX="5.25" PointY="1.875" />
+        <EntityTypeShape EntityType="WarehouseModel.Customer" Width="1.5" PointX="3" PointY="8.625" />
+        <EntityTypeShape EntityType="WarehouseModel.Iteam" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="WarehouseModel.Iteam_Measuring_unit" Width="1.5" PointX="5.25" PointY="12" />
+        <EntityTypeShape EntityType="WarehouseModel.Selling_includes" Width="1.5" PointX="10.5" PointY="1.875" />
+        <EntityTypeShape EntityType="WarehouseModel.Selling_Invoice" Width="1.5" PointX="5.25" PointY="4.625" />
+        <EntityTypeShape EntityType="WarehouseModel.Supplier" Width="1.5" PointX="6" PointY="8.625" />
+        <EntityTypeShape EntityType="WarehouseModel.Warehouse" Width="1.5" PointX="3" PointY="4.625" />
+        <AssociationConnector Association="WarehouseModel.FK__Buying_in__BarCo__3E52440B" />
+        <AssociationConnector Association="WarehouseModel.FK__Buying_in__Order__3D5E1FD2" />
+        <AssociationConnector Association="WarehouseModel.FK__Buying_In__Suppl__32E0915F" />
+        <AssociationConnector Association="WarehouseModel.FK__Buying_In__Wareh__31EC6D26" />
+        <AssociationConnector Association="WarehouseModel.FK__Contains___BarCo__398D8EEE" />
+        <AssociationConnector Association="WarehouseModel.FK__Contains___Itme___3A81B327" />
+        <AssociationConnector Association="WarehouseModel.FK__Selling_I__Custo__36B12243" />
+        <AssociationConnector Association="WarehouseModel.FK__Iteam_Mea__BarCo__2C3393D0" />
+        <AssociationConnector Association="WarehouseModel.FK__Selling_i__BarCo__4222D4EF" />
+        <AssociationConnector Association="WarehouseModel.FK__Warehouse__Mange__2F10007B" />
+        <AssociationConnector Association="WarehouseModel.FK__Selling_i__Order__412EB0B6" />
+        <AssociationConnector Association="WarehouseModel.FK__Selling_In__Name__35BCFE0A" />
+        <EntityTypeShape EntityType="WarehouseModel.transfer" Width="1.5" PointX="1" PointY="1.125" />
+        <AssociationConnector Association="WarehouseModel.FK_transfers_Iteam" />
+        <AssociationConnector Association="WarehouseModel.FK_transfers_Warehouse" />
+        <AssociationConnector Association="WarehouseModel.FK_transfers_Warehouse1" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

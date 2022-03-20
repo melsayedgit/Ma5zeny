@@ -20,6 +20,8 @@ namespace Ma5zeny
             this.Buying_Invoice = new HashSet<Buying_Invoice>();
             this.Contains_Items = new HashSet<Contains_Items>();
             this.Selling_Invoice = new HashSet<Selling_Invoice>();
+            this.transfers = new HashSet<transfer>();
+            this.transfers1 = new HashSet<transfer>();
         }
     
         public string Name { get; set; }
@@ -33,5 +35,9 @@ namespace Ma5zeny
         public virtual Manger Manger { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Selling_Invoice> Selling_Invoice { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<transfer> transfers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<transfer> transfers1 { get; set; }
     }
 }

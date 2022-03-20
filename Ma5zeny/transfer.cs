@@ -12,13 +12,18 @@ namespace Ma5zeny
     using System;
     using System.Collections.Generic;
     
-    public partial class Contains_Items
+    public partial class transfer
     {
-        public Nullable<int> Amount { get; set; }
-        public int BarCode { get; set; }
-        public string Warehouse_Name { get; set; }
+        public int transction_id { get; set; }
+        public string from_warehouse { get; set; }
+        public string to_warehouse { get; set; }
+        public Nullable<int> item_barcode { get; set; }
+        public Nullable<int> amount { get; set; }
+        public Nullable<System.DateTime> Producing_Date { get; set; }
+        public Nullable<System.DateTime> expiry_Date { get; set; }
     
         public virtual Iteam Iteam { get; set; }
         public virtual Warehouse Warehouse { get; set; }
+        public virtual Warehouse Warehouse1 { get; set; }
     }
 }
