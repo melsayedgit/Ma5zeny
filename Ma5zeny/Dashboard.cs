@@ -43,6 +43,8 @@ namespace Ma5zeny
 
 
 
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
         }
         #region updateviews
         void updateWarehouseView()
@@ -807,8 +809,7 @@ namespace Ma5zeny
 
             }
         }
+
         #endregion
-
-
     }
 }

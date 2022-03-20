@@ -123,21 +123,25 @@
             this.materialRaisedButton18 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label3 = new System.Windows.Forms.Label();
             this.Stock_Transfer = new System.Windows.Forms.TabPage();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.materialRaisedButton19 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.listBox8 = new System.Windows.Forms.ListBox();
+            this.listBox7 = new System.Windows.Forms.ListBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.Reports = new System.Windows.Forms.TabPage();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.listBox7 = new System.Windows.Forms.ListBox();
-            this.listBox8 = new System.Windows.Forms.ListBox();
-            this.materialRaisedButton19 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.label37 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabControl1.SuspendLayout();
             this.Managing.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -148,6 +152,9 @@
             this.Buying_invoices.SuspendLayout();
             this.Selling_invoices.SuspendLayout();
             this.Stock_Transfer.SuspendLayout();
+            this.Reports.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1278,84 +1285,55 @@
             this.Stock_Transfer.Text = "Stock Transfer";
             this.Stock_Transfer.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // label39
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Salmon;
-            this.label6.Location = new System.Drawing.Point(382, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(212, 39);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Stock Transfer";
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(98, 262);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(44, 16);
+            this.label39.TabIndex = 15;
+            this.label39.Text = "Expiry";
             // 
-            // Reports
+            // label38
             // 
-            this.Reports.Location = new System.Drawing.Point(4, 25);
-            this.Reports.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Reports.Name = "Reports";
-            this.Reports.Size = new System.Drawing.Size(1059, 444);
-            this.Reports.TabIndex = 1;
-            this.Reports.Text = "Reports";
-            this.Reports.UseVisualStyleBackColor = true;
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(69, 207);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(100, 16);
+            this.label38.TabIndex = 14;
+            this.label38.Text = "Producing Date";
             // 
-            // label34
+            // dateTimePicker5
             // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Segoe Script", 28.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(44, 46);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(177, 74);
-            this.label34.TabIndex = 6;
-            this.label34.Text = "From:";
+            this.dateTimePicker5.Location = new System.Drawing.Point(21, 281);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker5.TabIndex = 13;
             // 
-            // label35
+            // dateTimePicker3
             // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Segoe Script", 28.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(533, 46);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(103, 74);
-            this.label35.TabIndex = 6;
-            this.label35.Text = "To:";
+            this.dateTimePicker3.Location = new System.Drawing.Point(21, 226);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker3.TabIndex = 12;
             // 
-            // comboBox1
+            // textBox25
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Agency FB", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(227, 71);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(309, 36);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox25.Location = new System.Drawing.Point(62, 159);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(107, 38);
+            this.textBox25.TabIndex = 11;
             // 
-            // comboBox2
+            // label37
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Agency FB", 13.8F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(642, 71);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(322, 36);
-            this.comboBox2.TabIndex = 7;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // listBox7
-            // 
-            this.listBox7.FormattingEnabled = true;
-            this.listBox7.ItemHeight = 16;
-            this.listBox7.Location = new System.Drawing.Point(239, 136);
-            this.listBox7.Name = "listBox7";
-            this.listBox7.Size = new System.Drawing.Size(280, 244);
-            this.listBox7.TabIndex = 8;
-            // 
-            // listBox8
-            // 
-            this.listBox8.FormattingEnabled = true;
-            this.listBox8.ItemHeight = 16;
-            this.listBox8.Location = new System.Drawing.Point(658, 136);
-            this.listBox8.Name = "listBox8";
-            this.listBox8.Size = new System.Drawing.Size(280, 244);
-            this.listBox8.TabIndex = 8;
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(56, 120);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(118, 36);
+            this.label37.TabIndex = 10;
+            this.label37.Text = "Amount";
             // 
             // materialRaisedButton19
             // 
@@ -1374,55 +1352,127 @@
             this.materialRaisedButton19.UseVisualStyleBackColor = true;
             this.materialRaisedButton19.Click += new System.EventHandler(this.materialRaisedButton19_Click);
             // 
-            // label37
+            // listBox8
             // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(56, 120);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(118, 36);
-            this.label37.TabIndex = 10;
-            this.label37.Text = "Amount";
+            this.listBox8.FormattingEnabled = true;
+            this.listBox8.ItemHeight = 16;
+            this.listBox8.Location = new System.Drawing.Point(658, 136);
+            this.listBox8.Name = "listBox8";
+            this.listBox8.Size = new System.Drawing.Size(280, 244);
+            this.listBox8.TabIndex = 8;
             // 
-            // textBox25
+            // listBox7
             // 
-            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.Location = new System.Drawing.Point(62, 159);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(107, 38);
-            this.textBox25.TabIndex = 11;
+            this.listBox7.FormattingEnabled = true;
+            this.listBox7.ItemHeight = 16;
+            this.listBox7.Location = new System.Drawing.Point(239, 136);
+            this.listBox7.Name = "listBox7";
+            this.listBox7.Size = new System.Drawing.Size(280, 244);
+            this.listBox7.TabIndex = 8;
             // 
-            // dateTimePicker3
+            // comboBox2
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(21, 226);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker3.TabIndex = 12;
+            this.comboBox2.Font = new System.Drawing.Font("Agency FB", 13.8F);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(642, 71);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(322, 36);
+            this.comboBox2.TabIndex = 7;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // dateTimePicker5
+            // comboBox1
             // 
-            this.dateTimePicker5.Location = new System.Drawing.Point(21, 281);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker5.TabIndex = 13;
+            this.comboBox1.Font = new System.Drawing.Font("Agency FB", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(227, 71);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(309, 36);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // label38
+            // label35
             // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(69, 207);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(100, 16);
-            this.label38.TabIndex = 14;
-            this.label38.Text = "Producing Date";
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Segoe Script", 28.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(533, 46);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(103, 74);
+            this.label35.TabIndex = 6;
+            this.label35.Text = "To:";
             // 
-            // label39
+            // label34
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(98, 262);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(44, 16);
-            this.label39.TabIndex = 15;
-            this.label39.Text = "Expiry";
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe Script", 28.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(44, 46);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(177, 74);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "From:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Salmon;
+            this.label6.Location = new System.Drawing.Point(382, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(212, 39);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Stock Transfer";
+            // 
+            // Reports
+            // 
+            this.Reports.Controls.Add(this.tabControl3);
+            this.Reports.Location = new System.Drawing.Point(4, 25);
+            this.Reports.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Reports.Name = "Reports";
+            this.Reports.Size = new System.Drawing.Size(1059, 444);
+            this.Reports.TabIndex = 1;
+            this.Reports.Text = "Reports";
+            this.Reports.UseVisualStyleBackColor = true;
+            // 
+            // tabControl3
+            // 
+            this.tabControl3.Controls.Add(this.tabPage1);
+            this.tabControl3.Controls.Add(this.tabPage2);
+            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl3.Location = new System.Drawing.Point(0, 0);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(1059, 444);
+            this.tabControl3.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.reportViewer1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1051, 415);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1051, 415);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Ma5zeny.Reports.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1045, 409);
+            this.reportViewer1.TabIndex = 0;
             // 
             // Dashboard
             // 
@@ -1456,6 +1506,9 @@
             this.Selling_invoices.PerformLayout();
             this.Stock_Transfer.ResumeLayout(false);
             this.Stock_Transfer.PerformLayout();
+            this.Reports.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1571,5 +1624,9 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.DateTimePicker dateTimePicker5;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
