@@ -139,7 +139,7 @@ namespace Ma5zeny
                                          inv.Warehouse,
                                          inv.Supplier_D
                                      };
-                listBox4.Items.Clear();
+                listBox5.Items.Clear();
                 foreach (var inv in BuyingView)
                 {
                     listBox5.Items.Add("Order number:" + inv.Order_number + ",Buying_Date:" + inv.Buying_Date
@@ -147,6 +147,26 @@ namespace Ma5zeny
                         + ",Warehouse:" + inv.Warehouse + "Supplier_D:" + inv.Supplier_D);
                 }
             }
+
+        void updateSellingView()
+        {
+
+            var sellingview = from inv in AppManager.entities.Selling_Invoice
+                             select new
+                             {
+                                 inv.Order_number,
+                                 inv.Buying_Date,
+                                 inv.Warehouse_Name,
+                                 inv.Customer_ID
+
+                             };
+            listBox6.Items.Clear();
+            foreach (var inv in sellingview)
+            {
+                listBox6.Items.Add("Order number:" + inv.Order_number + ",Buying_Date:" + inv.Buying_Date
+                    + ",Warehouse Name:" + inv.Warehouse_Name + ",Customer ID:" + inv.Customer_ID);
+            }
+        }
         #endregion
 
         #region Warehouse
@@ -586,6 +606,72 @@ namespace Ma5zeny
         #endregion
 
         #region Selling Invocies
+        private void materialRaisedButton18_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var temp = new Selling_Invoice();
+                temp.Order_number = int.Parse(textBox22.Text);
+                temp.Buying_Date = dateTimePicker4.Value;
+                temp.Warehouse_Name = textBox24.Text;
+                temp.Customer_ID = int.Parse(textBox23.Text); ;
+                AppManager.entities.Selling_Invoice.Add(temp);
+                AppManager.entities.SaveChanges();
+                updateSellingView();
+
+
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Conflicting Data", "Error");
+            }
+
+        }
+
+        private void materialRaisedButton17_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var temp = AppManager.entities.Selling_Invoice.Find(int.Parse(textBox22.Text));
+                AppManager.entities.Selling_Invoice.Remove(temp);
+                temp.Order_number = int.Parse(textBox22.Text);
+                temp.Buying_Date = dateTimePicker4.Value;
+                temp.Warehouse_Name = textBox24.Text;
+                temp.Customer_ID = int.Parse(textBox23.Text); ;
+                AppManager.entities.Selling_Invoice.Add(temp);
+                AppManager.entities.SaveChanges();
+                updateSellingView();
+
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Conflicting Data", "Error");
+            }
+        }
+
+        private void materialRaisedButton16_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var temp = AppManager.entities.Selling_Invoice.Find(int.Parse(textBox22.Text));
+                AppManager.entities.Selling_Invoice.Remove(temp);
+
+                AppManager.entities.SaveChanges();
+                updateSellingView();
+
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Conflicting Data", "Error");
+            }
+        }
+
 
         #endregion
     }
