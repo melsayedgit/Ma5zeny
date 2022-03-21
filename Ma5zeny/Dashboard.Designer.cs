@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Managing = new System.Windows.Forms.TabPage();
@@ -140,8 +142,11 @@
             this.Reports = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.warehouseDataSet = new Ma5zeny.WarehouseDataSet();
+            this.report1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.report1TableAdapter = new Ma5zeny.WarehouseDataSetTableAdapters.Report1TableAdapter();
             this.tabControl1.SuspendLayout();
             this.Managing.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -155,6 +160,8 @@
             this.Reports.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.warehouseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1454,6 +1461,19 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "Report1";
+            reportDataSource1.Value = this.report1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Ma5zeny.Reports.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1045, 409);
+            this.reportViewer1.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -1464,15 +1484,19 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // reportViewer1
+            // warehouseDataSet
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Ma5zeny.Reports.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(3, 3);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1045, 409);
-            this.reportViewer1.TabIndex = 0;
+            this.warehouseDataSet.DataSetName = "WarehouseDataSet";
+            this.warehouseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // report1BindingSource
+            // 
+            this.report1BindingSource.DataMember = "Report1";
+            this.report1BindingSource.DataSource = this.warehouseDataSet;
+            // 
+            // report1TableAdapter
+            // 
+            this.report1TableAdapter.ClearBeforeFill = true;
             // 
             // Dashboard
             // 
@@ -1509,6 +1533,8 @@
             this.Reports.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.warehouseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1628,5 +1654,8 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private WarehouseDataSet warehouseDataSet;
+        private System.Windows.Forms.BindingSource report1BindingSource;
+        private WarehouseDataSetTableAdapters.Report1TableAdapter report1TableAdapter;
     }
 }

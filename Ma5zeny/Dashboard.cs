@@ -33,6 +33,14 @@ namespace Ma5zeny
         //initing the views 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'warehouseDataSet.Report1' table. You can move, or remove it, as needed.
+            this.report1TableAdapter.Fill(this.warehouseDataSet.Report1);
+            // TODO: This line of code loads data into the 'warehouseDataSet.Manger' table. You can move, or remove it, as needed.
+         
+            // TODO: This line of code loads data into the 'warehouseDataSet.Contains_Items' table. You can move, or remove it, as needed.
+           
+            // TODO: This line of code loads data into the 'warehouseDataSet.Warehouse' table. You can move, or remove it, as needed.
+          
 
             updateWarehouseView();
             updateItemView();
@@ -43,7 +51,6 @@ namespace Ma5zeny
 
 
 
-            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
         #region updateviews
