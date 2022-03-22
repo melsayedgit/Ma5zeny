@@ -30,7 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            this.report1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.warehouseDataSet = new Ma5zeny.WarehouseDataSet();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Managing = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -144,9 +147,20 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.warehouseDataSet = new Ma5zeny.WarehouseDataSet();
-            this.report1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.report1TableAdapter = new Ma5zeny.WarehouseDataSetTableAdapters.Report1TableAdapter();
+            this.Report2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.report2BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.report2TableAdapter = new Ma5zeny.WarehouseDataSetTableAdapters.Report2TableAdapter();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.report2BindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.report1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.warehouseDataSet)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.Managing.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -160,9 +174,21 @@
             this.Reports.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.warehouseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report1BindingSource)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Report2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report2BindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report2BindingSource2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // report1BindingSource
+            // 
+            this.report1BindingSource.DataMember = "Report1";
+            this.report1BindingSource.DataSource = this.warehouseDataSet;
+            // 
+            // warehouseDataSet
+            // 
+            this.warehouseDataSet.DataSetName = "WarehouseDataSet";
+            this.warehouseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabControl1
             // 
@@ -1458,7 +1484,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1051, 415);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Warehouses";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // reportViewer1
@@ -1476,27 +1502,110 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label42);
+            this.tabPage2.Controls.Add(this.label41);
+            this.tabPage2.Controls.Add(this.label40);
+            this.tabPage2.Controls.Add(this.dateTimePicker7);
+            this.tabPage2.Controls.Add(this.dateTimePicker6);
+            this.tabPage2.Controls.Add(this.comboBox3);
+            this.tabPage2.Controls.Add(this.reportViewer2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1051, 415);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Items";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // warehouseDataSet
-            // 
-            this.warehouseDataSet.DataSetName = "WarehouseDataSet";
-            this.warehouseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // report1BindingSource
-            // 
-            this.report1BindingSource.DataMember = "Report1";
-            this.report1BindingSource.DataSource = this.warehouseDataSet;
             // 
             // report1TableAdapter
             // 
             this.report1TableAdapter.ClearBeforeFill = true;
+            // 
+            // Report2BindingSource
+            // 
+            this.Report2BindingSource.DataMember = "Report2";
+            this.Report2BindingSource.DataSource = this.warehouseDataSet;
+            // 
+            // reportViewer2
+            // 
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.report2BindingSource2;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer2.LocalReport.ReportEmbeddedResource = "Ma5zeny.Reports.Report2.rdlc";
+            this.reportViewer2.Location = new System.Drawing.Point(0, 73);
+            this.reportViewer2.Name = "reportViewer2";
+            this.reportViewer2.ServerReport.BearerToken = null;
+            this.reportViewer2.Size = new System.Drawing.Size(1045, 246);
+            this.reportViewer2.TabIndex = 0;
+            // 
+            // report2BindingSource1
+            // 
+            this.report2BindingSource1.DataMember = "Report2";
+            this.report2BindingSource1.DataSource = this.warehouseDataSet;
+            // 
+            // report2TableAdapter
+            // 
+            this.report2TableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(218, 25);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(184, 24);
+            this.comboBox3.TabIndex = 1;
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.Location = new System.Drawing.Point(515, 23);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker6.TabIndex = 2;
+            // 
+            // dateTimePicker7
+            // 
+            this.dateTimePicker7.Location = new System.Drawing.Point(833, 23);
+            this.dateTimePicker7.Name = "dateTimePicker7";
+            this.dateTimePicker7.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker7.TabIndex = 3;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Script MT Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.Salmon;
+            this.label40.Location = new System.Drawing.Point(17, 10);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(171, 39);
+            this.label40.TabIndex = 6;
+            this.label40.Text = "Warehouse:";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.Color.Coral;
+            this.label41.Location = new System.Drawing.Point(428, 17);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(78, 32);
+            this.label41.TabIndex = 15;
+            this.label41.Text = "from:";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.ForeColor = System.Drawing.Color.Coral;
+            this.label42.Location = new System.Drawing.Point(749, 15);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(38, 32);
+            this.label42.TabIndex = 15;
+            this.label42.Text = "to";
+            // 
+            // report2BindingSource2
+            // 
+            this.report2BindingSource2.DataMember = "Report2";
+            this.report2BindingSource2.DataSource = this.warehouseDataSet;
             // 
             // Dashboard
             // 
@@ -1513,6 +1622,8 @@
             this.Text = "Dashboard";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dashboard_FormClosing);
             this.Load += new System.EventHandler(this.Dashboard_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.report1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.warehouseDataSet)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.Managing.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
@@ -1533,8 +1644,11 @@
             this.Reports.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.warehouseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report1BindingSource)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Report2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report2BindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report2BindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1657,5 +1771,16 @@
         private WarehouseDataSet warehouseDataSet;
         private System.Windows.Forms.BindingSource report1BindingSource;
         private WarehouseDataSetTableAdapters.Report1TableAdapter report1TableAdapter;
+        private System.Windows.Forms.BindingSource Report2BindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
+        private System.Windows.Forms.BindingSource report2BindingSource1;
+        private WarehouseDataSetTableAdapters.Report2TableAdapter report2TableAdapter;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.DateTimePicker dateTimePicker7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker6;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.BindingSource report2BindingSource2;
     }
 }
