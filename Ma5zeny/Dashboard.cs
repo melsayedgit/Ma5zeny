@@ -16,10 +16,11 @@ namespace Ma5zeny
 {
     public partial class Dashboard : MaterialForm
     {
-     
+
         public Dashboard()
         {
             InitializeComponent();
+
 
         }
 
@@ -27,12 +28,14 @@ namespace Ma5zeny
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
             AppManager.LoginForm.Close();
-            
+
         }
 
         //initing the views 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'warehouseDataSet1.Itemsandmeasuringuint' table. You can move, or remove it, as needed.
+            this.itemsandmeasuringuintTableAdapter.Fill(this.warehouseDataSet1.Itemsandmeasuringuint);
             // TODO: This line of code loads data into the 'warehouseDataSet.Report2' table. You can move, or remove it, as needed.
             this.report2TableAdapter.Fill(this.warehouseDataSet.Report2);
             // TODO: This line of code loads data into the 'warehouseDataSet.Report1' table. You can move, or remove it, as needed.
@@ -48,47 +51,49 @@ namespace Ma5zeny
             updateFomtoView();
 
             report2guiload();
+            howlongLoad();
 
 
 
             this.reportViewer1.RefreshReport();
             this.reportViewer2.RefreshReport();
 
+            this.reportViewer3.RefreshReport();
         }
         #region updateviews
         void updateWarehouseView()
         {
 
-           var  WarehouseView = from wr in AppManager.entities.Warehouses
-                            select new 
-                            {
-                                wr.Name,
-                                wr.Address,
-                                wr.Manger_id
-                            };
+            var WarehouseView = from wr in AppManager.entities.Warehouses
+                                select new
+                                {
+                                    wr.Name,
+                                    wr.Address,
+                                    wr.Manger_id
+                                };
             listBox1.Items.Clear();
             foreach (var wr in WarehouseView)
             {
-                listBox1.Items.Add( "Name:"+ wr.Name +",Address:"+ wr.Address+",Manger_id:" +wr.Manger_id );
-     
+                listBox1.Items.Add("Name:" + wr.Name + ",Address:" + wr.Address + ",Manger_id:" + wr.Manger_id);
+
 
             }
-            
+
         }
 
         void updateItemView()
         {
 
             var view = from wr in AppManager.entities.Iteams
-                                select new
-                                {
-                                    wr.BarCode,
-                                    wr.Name  
-                                };
+                       select new
+                       {
+                           wr.BarCode,
+                           wr.Name
+                       };
             listBox2.Items.Clear();
             foreach (var wr in view)
             {
-                listBox2.Items.Add("BarCode:" + wr.BarCode + ",Name:" + wr.Name );
+                listBox2.Items.Add("BarCode:" + wr.BarCode + ",Name:" + wr.Name);
             }
 
         }
@@ -97,21 +102,21 @@ namespace Ma5zeny
         {
 
             var supplierview = from sp in AppManager.entities.Suppliers
-                                select new
-                                {
-                                    sp.ID,
-                                    sp.Name,
-                                    sp.Phone,
-                                    sp.FAX,
-                                    sp.Email,
-                                    sp.Website
-                                };
+                               select new
+                               {
+                                   sp.ID,
+                                   sp.Name,
+                                   sp.Phone,
+                                   sp.FAX,
+                                   sp.Email,
+                                   sp.Website
+                               };
             listBox3.Items.Clear();
             foreach (var sp in supplierview)
             {
-                listBox3.Items.Add("Id:" + sp.ID + ",Name:" + sp.Name 
-                    + ",phone:" + sp.Phone+ ",fax:"+sp.FAX
-                    +",email:"+sp.Email+"website:"+sp.Website);
+                listBox3.Items.Add("Id:" + sp.ID + ",Name:" + sp.Name
+                    + ",phone:" + sp.Phone + ",fax:" + sp.FAX
+                    + ",email:" + sp.Email + "website:" + sp.Website);
             }
 
         }
@@ -139,39 +144,39 @@ namespace Ma5zeny
 
         }
         void updateBuyingView()
-            {
+        {
 
-                var BuyingView = from inv in AppManager.entities.Buying_Invoice
-                                     select new
-                                     {
-                                         inv.Order_number,
-                                         inv.Buying_Date,
-                                         inv.producing_Date,
-                                         inv.expiry_count_days,
-                                         inv.Warehouse,
-                                         inv.Supplier_D
-                                     };
-                listBox5.Items.Clear();
-                foreach (var inv in BuyingView)
-                {
-                    listBox5.Items.Add("Order number:" + inv.Order_number + ",Buying_Date:" + inv.Buying_Date
-                        + ",producing_Date:" + inv.producing_Date + ",expiry_days:" + inv.expiry_count_days
-                        + ",Warehouse:" + inv.Warehouse + "Supplier_D:" + inv.Supplier_D);
-                }
+            var BuyingView = from inv in AppManager.entities.Buying_Invoice
+                             select new
+                             {
+                                 inv.Order_number,
+                                 inv.Buying_Date,
+                                 inv.producing_Date,
+                                 inv.expiry_count_days,
+                                 inv.Warehouse,
+                                 inv.Supplier_D
+                             };
+            listBox5.Items.Clear();
+            foreach (var inv in BuyingView)
+            {
+                listBox5.Items.Add("Order number:" + inv.Order_number + ",Buying_Date:" + inv.Buying_Date
+                    + ",producing_Date:" + inv.producing_Date + ",expiry_days:" + inv.expiry_count_days
+                    + ",Warehouse:" + inv.Warehouse + "Supplier_D:" + inv.Supplier_D);
             }
+        }
 
         void updateSellingView()
         {
 
             var sellingview = from inv in AppManager.entities.Selling_Invoice
-                             select new
-                             {
-                                 inv.Order_number,
-                                 inv.Buying_Date,
-                                 inv.Warehouse_Name,
-                                 inv.Customer_ID
+                              select new
+                              {
+                                  inv.Order_number,
+                                  inv.Buying_Date,
+                                  inv.Warehouse_Name,
+                                  inv.Customer_ID
 
-                             };
+                              };
             listBox6.Items.Clear();
             foreach (var inv in sellingview)
             {
@@ -186,9 +191,9 @@ namespace Ma5zeny
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-  
 
-           
+
+
             try
             {
                 Warehouse temp = new Warehouse();
@@ -197,7 +202,7 @@ namespace Ma5zeny
 
                 if (temp.Name == "")
                 {
-                    MessageBox.Show("You Didn't enter Warehouse Name","Error");
+                    MessageBox.Show("You Didn't enter Warehouse Name", "Error");
                 }
                 else
                 {
@@ -208,12 +213,12 @@ namespace Ma5zeny
 
 
                 }
-                
+
             }
             catch (Exception)
             {
-              
-                MessageBox.Show("Conflicting Data","Error");
+
+                MessageBox.Show("Conflicting Data", "Error");
             }
 
         }
@@ -228,11 +233,11 @@ namespace Ma5zeny
                 {
                     if (temp.Name == "")
                     {
-                        MessageBox.Show( "You Didn't enter Warehouse Name","Error");
+                        MessageBox.Show("You Didn't enter Warehouse Name", "Error");
                     }
                     else
                     {
-                        
+
                         AppManager.entities.Warehouses.Remove(temp);
                         temp.Name = textBox1.Text;
                         temp.Address = textBox2.Text;
@@ -255,7 +260,7 @@ namespace Ma5zeny
 
             else
             {
-                MessageBox.Show( "Could not find WareHouse ","Error");
+                MessageBox.Show("Could not find WareHouse ", "Error");
             }
         }
         private void materialRaisedButton3_Click(object sender, EventArgs e)
@@ -360,8 +365,8 @@ namespace Ma5zeny
             }
         }
 
-  
-  
+
+
 
         private void materialRaisedButton4_Click(object sender, EventArgs e)
         {
@@ -406,7 +411,7 @@ namespace Ma5zeny
                 temp.Email = textBox10.Text;
                 temp.Website = textBox11.Text;
                 AppManager.entities.Suppliers.Add(temp);
-                    AppManager.entities.SaveChanges();
+                AppManager.entities.SaveChanges();
                 updateSuppliersView();
 
 
@@ -572,7 +577,7 @@ namespace Ma5zeny
             {
                 Buying_Invoice temp = AppManager.entities.Buying_Invoice.Find(int.Parse(textBox18.Text));
                 AppManager.entities.Buying_Invoice.Remove(temp);
-          
+
                 temp.Order_number = int.Parse(textBox18.Text);
                 temp.Buying_Date = dateTimePicker1.Value;
                 temp.producing_Date = dateTimePicker1.Value;
@@ -688,7 +693,7 @@ namespace Ma5zeny
         #endregion
 
         #region Transfer
-         void updateFomtoView()
+        void updateFomtoView()
         {
             //comboboxes
             foreach (var item in AppManager.entities.Warehouses)
@@ -701,7 +706,7 @@ namespace Ma5zeny
 
             foreach (var item in AppManager.entities.Warehouses.First().Contains_Items)
             {
-                listBox7.Items.Add(item.BarCode +","+item.Iteam.Name+ ", amount:" + item.Amount);
+                listBox7.Items.Add(item.BarCode + "," + item.Iteam.Name + ", amount:" + item.Amount);
 
 
             }
@@ -732,20 +737,20 @@ namespace Ma5zeny
                 tran.from_warehouse = fromWarehouse;
                 tran.to_warehouse = toWarehouse;
                 tran.Producing_Date = producingDate;
-                tran.expiry_Date  = expiryDate;
+                tran.expiry_Date = expiryDate;
                 tran.item_barcode = frombarcode;
-                 
+
 
                 if (amount > instockAmount)
                 {
-                    MessageBox.Show("You don't have enough amount to transefer","insufficient Amount");
+                    MessageBox.Show("You don't have enough amount to transefer", "insufficient Amount");
                 }
                 else
                 {
                     AppManager.entities.transfers.Add(tran);
-                    AppManager.entities.Contains_Items.Find(frombarcode,fromWarehouse).Amount -= amount;
-                    
-                    if (AppManager.entities.Contains_Items.Find(frombarcode,toWarehouse) !=null)
+                    AppManager.entities.Contains_Items.Find(frombarcode, fromWarehouse).Amount -= amount;
+
+                    if (AppManager.entities.Contains_Items.Find(frombarcode, toWarehouse) != null)
                     {
                         AppManager.entities.Contains_Items.Find(frombarcode, toWarehouse).Amount += amount;
                     }
@@ -762,27 +767,27 @@ namespace Ma5zeny
                     AppManager.entities.SaveChanges();
 
 
-                listBox7.Items.Clear();
-                foreach (var item in AppManager.entities.Warehouses.Find(comboBox1.Text).Contains_Items)
-                {
+                    listBox7.Items.Clear();
+                    foreach (var item in AppManager.entities.Warehouses.Find(comboBox1.Text).Contains_Items)
+                    {
 
-                    listBox7.Items.Add(item.BarCode + "," + item.Iteam.Name + ", amount:" + item.Amount);
+                        listBox7.Items.Add(item.BarCode + "," + item.Iteam.Name + ", amount:" + item.Amount);
 
 
+
+                    }
+                    listBox8.Items.Clear();
+                    foreach (var item in AppManager.entities.Warehouses.Find(comboBox2.Text).Contains_Items)
+                    {
+
+                        listBox8.Items.Add(item.BarCode + "," + item.Iteam.Name + ", amount:" + item.Amount);
+
+
+                    }
 
                 }
-                listBox8.Items.Clear();
-                foreach (var item in AppManager.entities.Warehouses.Find(comboBox2.Text).Contains_Items)
-                {
 
-                    listBox8.Items.Add(item.BarCode + "," + item.Iteam.Name + ", amount:" + item.Amount);
-
-
-                }
-                
             }
-
-        }
             catch (Exception)
             {
                 throw;
@@ -790,15 +795,15 @@ namespace Ma5zeny
                 MessageBox.Show("you did not enter a correct value");
             }
 
-}
+        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
             listBox7.Items.Clear();
             foreach (var item in AppManager.entities.Warehouses.Find(comboBox1.Text).Contains_Items)
             {
-              
+
                 listBox7.Items.Add(item.BarCode + "," + item.Iteam.Name + ", amount:" + item.Amount);
 
 
@@ -812,7 +817,7 @@ namespace Ma5zeny
             listBox8.Items.Clear();
             foreach (var item in AppManager.entities.Warehouses.Find(comboBox2.Text).Contains_Items)
             {
-                
+
                 listBox8.Items.Add(item.BarCode + "," + item.Iteam.Name + ", amount:" + item.Amount);
 
 
@@ -826,11 +831,91 @@ namespace Ma5zeny
         {
             foreach (var item in AppManager.entities.Warehouses)
             {
-      
+
                 comboBox3.Items.Add(item.Name);
 
             }
         }
-    #endregion
-}
+
+        void howlongLoad()
+        {
+            foreach (var item in AppManager.entities.Warehouses)
+            {
+
+                comboBox4.Items.Add(item.Name);
+
+            }
+
+            foreach (var item in AppManager.entities.Warehouses)
+            {
+
+                comboBox5.Items.Add(item.Name);
+
+            }
+
+
+        }
+
+        private void materialRaisedButton20_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var wrinvoice = AppManager.entities.Warehouses.Find(comboBox4.Text).Buying_Invoice;
+                int days = int.Parse(textBox26.Text);
+                TimeSpan daysspan = new TimeSpan(days, 0, 0, 0);
+                var reqDate = new DateTime();
+                reqDate = DateTime.Now;
+                reqDate.Subtract(daysspan);
+                listBox9.Items.Clear();
+                foreach (var item in wrinvoice)
+                {
+                    if (item.Buying_Date > reqDate)
+                    {
+                        listBox9.Items.Add(item.Buying_includes.First().Iteam.Name + ",Buying Date: " + item.Buying_Date
+                            + ",supplier:" + item.Supplier + ",Days until Expiry" + item.expiry_count_days);
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("You enterd Wrong Values", "ERROR");
+            }
+
+        }
+
+
+
+        #endregion
+
+        private void materialRaisedButton21_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var wrinvoice = AppManager.entities.Warehouses.Find(comboBox4.Text).Buying_Invoice;
+                int days = int.Parse(textBox26.Text);
+                TimeSpan daysspan = new TimeSpan(days, 0, 0, 0);
+                var reqDate = new DateTime();
+                reqDate = DateTime.Now;
+                reqDate.Subtract(daysspan);
+                listBox9.Items.Clear();
+                foreach (var item in wrinvoice)
+                {
+                    if (item.Buying_Date > reqDate)
+                    {
+                        listBox10.Items.Add(item.Buying_includes.First().Iteam.Name + ",Buying Date: " + item.Buying_Date
+                            + ",supplier:" + item.Supplier + ",Days until Expiry" + item.expiry_count_days);
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("You enterd Wrong Values", "ERROR");
+            }
+
+        }
+    }
 }

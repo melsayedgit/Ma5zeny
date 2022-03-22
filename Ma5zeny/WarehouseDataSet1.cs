@@ -8,7 +8,7 @@
         {
         }
 
-        partial class DataTable1DataTable
+        partial class ItemsandmeasuringuintDataTable
         {
         }
     }
@@ -16,7 +16,9 @@
 
 namespace Ma5zeny.WarehouseDataSetTableAdapters
 {
-
+    partial class ItemsandmeasuringuintTableAdapter
+    {
+    }
 
     public partial class Report1TableAdapter
     {

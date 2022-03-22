@@ -52,6 +52,8 @@ namespace Ma5zeny {
         
         private Report2DataTable tableReport2;
         
+        private ItemsandmeasuringuintDataTable tableItemsandmeasuringuint;
+        
         private global::System.Data.DataRelation relationFK__Buying_in__BarCo__3E52440B;
         
         private global::System.Data.DataRelation relationFK__Buying_in__Order__3D5E1FD2;
@@ -95,6 +97,16 @@ namespace Ma5zeny {
         private global::System.Data.DataRelation relationFK__Selling_i__BarCo__4222D4EF1;
         
         private global::System.Data.DataRelation relationFK_transfers_Iteam1;
+        
+        private global::System.Data.DataRelation relationFK__Buying_in__BarCo__3E52440B2;
+        
+        private global::System.Data.DataRelation relationFK__Contains___BarCo__398D8EEE3;
+        
+        private global::System.Data.DataRelation relationFK__Iteam_Mea__BarCo__2C3393D02;
+        
+        private global::System.Data.DataRelation relationFK__Selling_i__BarCo__4222D4EF2;
+        
+        private global::System.Data.DataRelation relationFK_transfers_Iteam2;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -165,6 +177,9 @@ namespace Ma5zeny {
                 }
                 if ((ds.Tables["Report2"] != null)) {
                     base.Tables.Add(new Report2DataTable(ds.Tables["Report2"]));
+                }
+                if ((ds.Tables["Itemsandmeasuringuint"] != null)) {
+                    base.Tables.Add(new ItemsandmeasuringuintDataTable(ds.Tables["Itemsandmeasuringuint"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -326,6 +341,16 @@ namespace Ma5zeny {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ItemsandmeasuringuintDataTable Itemsandmeasuringuint {
+            get {
+                return this.tableItemsandmeasuringuint;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -432,6 +457,9 @@ namespace Ma5zeny {
                 }
                 if ((ds.Tables["Report2"] != null)) {
                     base.Tables.Add(new Report2DataTable(ds.Tables["Report2"]));
+                }
+                if ((ds.Tables["Itemsandmeasuringuint"] != null)) {
+                    base.Tables.Add(new ItemsandmeasuringuintDataTable(ds.Tables["Itemsandmeasuringuint"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -550,6 +578,12 @@ namespace Ma5zeny {
                     this.tableReport2.InitVars();
                 }
             }
+            this.tableItemsandmeasuringuint = ((ItemsandmeasuringuintDataTable)(base.Tables["Itemsandmeasuringuint"]));
+            if ((initTable == true)) {
+                if ((this.tableItemsandmeasuringuint != null)) {
+                    this.tableItemsandmeasuringuint.InitVars();
+                }
+            }
             this.relationFK__Buying_in__BarCo__3E52440B = this.Relations["FK__Buying_in__BarCo__3E52440B"];
             this.relationFK__Buying_in__Order__3D5E1FD2 = this.Relations["FK__Buying_in__Order__3D5E1FD2"];
             this.relationFK__Buying_In__Suppl__32E0915F = this.Relations["FK__Buying_In__Suppl__32E0915F"];
@@ -572,6 +606,11 @@ namespace Ma5zeny {
             this.relationFK__Iteam_Mea__BarCo__2C3393D01 = this.Relations["FK__Iteam_Mea__BarCo__2C3393D01"];
             this.relationFK__Selling_i__BarCo__4222D4EF1 = this.Relations["FK__Selling_i__BarCo__4222D4EF1"];
             this.relationFK_transfers_Iteam1 = this.Relations["FK_transfers_Iteam1"];
+            this.relationFK__Buying_in__BarCo__3E52440B2 = this.Relations["FK__Buying_in__BarCo__3E52440B2"];
+            this.relationFK__Contains___BarCo__398D8EEE3 = this.Relations["FK__Contains___BarCo__398D8EEE3"];
+            this.relationFK__Iteam_Mea__BarCo__2C3393D02 = this.Relations["FK__Iteam_Mea__BarCo__2C3393D02"];
+            this.relationFK__Selling_i__BarCo__4222D4EF2 = this.Relations["FK__Selling_i__BarCo__4222D4EF2"];
+            this.relationFK_transfers_Iteam2 = this.Relations["FK_transfers_Iteam2"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -610,6 +649,8 @@ namespace Ma5zeny {
             base.Tables.Add(this.tableReport1);
             this.tableReport2 = new Report2DataTable();
             base.Tables.Add(this.tableReport2);
+            this.tableItemsandmeasuringuint = new ItemsandmeasuringuintDataTable();
+            base.Tables.Add(this.tableItemsandmeasuringuint);
             this.relationFK__Buying_in__BarCo__3E52440B = new global::System.Data.DataRelation("FK__Buying_in__BarCo__3E52440B", new global::System.Data.DataColumn[] {
                         this.tableIteam.BarCodeColumn}, new global::System.Data.DataColumn[] {
                         this.tableBuying_includes.BarCodeColumn}, false);
@@ -698,6 +739,26 @@ namespace Ma5zeny {
                         this.tableReport2.BarCodeColumn}, new global::System.Data.DataColumn[] {
                         this.tabletransfers.item_barcodeColumn}, false);
             this.Relations.Add(this.relationFK_transfers_Iteam1);
+            this.relationFK__Buying_in__BarCo__3E52440B2 = new global::System.Data.DataRelation("FK__Buying_in__BarCo__3E52440B2", new global::System.Data.DataColumn[] {
+                        this.tableItemsandmeasuringuint.BarCodeColumn}, new global::System.Data.DataColumn[] {
+                        this.tableBuying_includes.BarCodeColumn}, false);
+            this.Relations.Add(this.relationFK__Buying_in__BarCo__3E52440B2);
+            this.relationFK__Contains___BarCo__398D8EEE3 = new global::System.Data.DataRelation("FK__Contains___BarCo__398D8EEE3", new global::System.Data.DataColumn[] {
+                        this.tableItemsandmeasuringuint.BarCodeColumn}, new global::System.Data.DataColumn[] {
+                        this.tableContains_Items.BarCodeColumn}, false);
+            this.Relations.Add(this.relationFK__Contains___BarCo__398D8EEE3);
+            this.relationFK__Iteam_Mea__BarCo__2C3393D02 = new global::System.Data.DataRelation("FK__Iteam_Mea__BarCo__2C3393D02", new global::System.Data.DataColumn[] {
+                        this.tableItemsandmeasuringuint.BarCodeColumn}, new global::System.Data.DataColumn[] {
+                        this.tableIteam_Measuring_unit.BarCodeColumn}, false);
+            this.Relations.Add(this.relationFK__Iteam_Mea__BarCo__2C3393D02);
+            this.relationFK__Selling_i__BarCo__4222D4EF2 = new global::System.Data.DataRelation("FK__Selling_i__BarCo__4222D4EF2", new global::System.Data.DataColumn[] {
+                        this.tableItemsandmeasuringuint.BarCodeColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSelling_includes.BarCodeColumn}, false);
+            this.Relations.Add(this.relationFK__Selling_i__BarCo__4222D4EF2);
+            this.relationFK_transfers_Iteam2 = new global::System.Data.DataRelation("FK_transfers_Iteam2", new global::System.Data.DataColumn[] {
+                        this.tableItemsandmeasuringuint.BarCodeColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletransfers.item_barcodeColumn}, false);
+            this.Relations.Add(this.relationFK_transfers_Iteam2);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -781,6 +842,12 @@ namespace Ma5zeny {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeReport2() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeItemsandmeasuringuint() {
             return false;
         }
         
@@ -880,6 +947,9 @@ namespace Ma5zeny {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void Report2RowChangeEventHandler(object sender, Report2RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void ItemsandmeasuringuintRowChangeEventHandler(object sender, ItemsandmeasuringuintRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -5292,6 +5362,285 @@ namespace Ma5zeny {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ItemsandmeasuringuintDataTable : global::System.Data.TypedTableBase<ItemsandmeasuringuintRow> {
+            
+            private global::System.Data.DataColumn columnBarCode;
+            
+            private global::System.Data.DataColumn columnName;
+            
+            private global::System.Data.DataColumn columnMeasuring_unit;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ItemsandmeasuringuintDataTable() {
+                this.TableName = "Itemsandmeasuringuint";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ItemsandmeasuringuintDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected ItemsandmeasuringuintDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BarCodeColumn {
+                get {
+                    return this.columnBarCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Measuring_unitColumn {
+                get {
+                    return this.columnMeasuring_unit;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ItemsandmeasuringuintRow this[int index] {
+                get {
+                    return ((ItemsandmeasuringuintRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ItemsandmeasuringuintRowChangeEventHandler ItemsandmeasuringuintRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ItemsandmeasuringuintRowChangeEventHandler ItemsandmeasuringuintRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ItemsandmeasuringuintRowChangeEventHandler ItemsandmeasuringuintRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ItemsandmeasuringuintRowChangeEventHandler ItemsandmeasuringuintRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddItemsandmeasuringuintRow(ItemsandmeasuringuintRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ItemsandmeasuringuintRow AddItemsandmeasuringuintRow(int BarCode, string Name, string Measuring_unit) {
+                ItemsandmeasuringuintRow rowItemsandmeasuringuintRow = ((ItemsandmeasuringuintRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        BarCode,
+                        Name,
+                        Measuring_unit};
+                rowItemsandmeasuringuintRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowItemsandmeasuringuintRow);
+                return rowItemsandmeasuringuintRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ItemsandmeasuringuintDataTable cln = ((ItemsandmeasuringuintDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ItemsandmeasuringuintDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnBarCode = base.Columns["BarCode"];
+                this.columnName = base.Columns["Name"];
+                this.columnMeasuring_unit = base.Columns["Measuring_unit"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnBarCode = new global::System.Data.DataColumn("BarCode", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBarCode);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
+                this.columnMeasuring_unit = new global::System.Data.DataColumn("Measuring_unit", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMeasuring_unit);
+                this.columnBarCode.AllowDBNull = false;
+                this.columnName.MaxLength = 50;
+                this.columnMeasuring_unit.AllowDBNull = false;
+                this.columnMeasuring_unit.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ItemsandmeasuringuintRow NewItemsandmeasuringuintRow() {
+                return ((ItemsandmeasuringuintRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ItemsandmeasuringuintRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ItemsandmeasuringuintRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ItemsandmeasuringuintRowChanged != null)) {
+                    this.ItemsandmeasuringuintRowChanged(this, new ItemsandmeasuringuintRowChangeEvent(((ItemsandmeasuringuintRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ItemsandmeasuringuintRowChanging != null)) {
+                    this.ItemsandmeasuringuintRowChanging(this, new ItemsandmeasuringuintRowChangeEvent(((ItemsandmeasuringuintRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ItemsandmeasuringuintRowDeleted != null)) {
+                    this.ItemsandmeasuringuintRowDeleted(this, new ItemsandmeasuringuintRowChangeEvent(((ItemsandmeasuringuintRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ItemsandmeasuringuintRowDeleting != null)) {
+                    this.ItemsandmeasuringuintRowDeleting(this, new ItemsandmeasuringuintRowChangeEvent(((ItemsandmeasuringuintRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveItemsandmeasuringuintRow(ItemsandmeasuringuintRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                WarehouseDataSet ds = new WarehouseDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ItemsandmeasuringuintDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class Buying_includesRow : global::System.Data.DataRow {
@@ -5373,6 +5722,17 @@ namespace Ma5zeny {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Buying_in__BarCo__3E52440B1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ItemsandmeasuringuintRow ItemsandmeasuringuintRow {
+                get {
+                    return ((ItemsandmeasuringuintRow)(this.GetParentRow(this.Table.ParentRelations["FK__Buying_in__BarCo__3E52440B2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Buying_in__BarCo__3E52440B2"]);
                 }
             }
             
@@ -5670,6 +6030,17 @@ namespace Ma5zeny {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Contains___BarCo__398D8EEE2"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ItemsandmeasuringuintRow ItemsandmeasuringuintRow {
+                get {
+                    return ((ItemsandmeasuringuintRow)(this.GetParentRow(this.Table.ParentRelations["FK__Contains___BarCo__398D8EEE3"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Contains___BarCo__398D8EEE3"]);
                 }
             }
             
@@ -6040,6 +6411,17 @@ namespace Ma5zeny {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Iteam_Mea__BarCo__2C3393D01"]);
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ItemsandmeasuringuintRow ItemsandmeasuringuintRow {
+                get {
+                    return ((ItemsandmeasuringuintRow)(this.GetParentRow(this.Table.ParentRelations["FK__Iteam_Mea__BarCo__2C3393D02"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Iteam_Mea__BarCo__2C3393D02"]);
+                }
+            }
         }
         
         /// <summary>
@@ -6245,6 +6627,17 @@ namespace Ma5zeny {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Selling_i__BarCo__4222D4EF1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ItemsandmeasuringuintRow ItemsandmeasuringuintRow {
+                get {
+                    return ((ItemsandmeasuringuintRow)(this.GetParentRow(this.Table.ParentRelations["FK__Selling_i__BarCo__4222D4EF2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Selling_i__BarCo__4222D4EF2"]);
                 }
             }
             
@@ -6743,6 +7136,17 @@ namespace Ma5zeny {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_transfers_Iteam1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ItemsandmeasuringuintRow ItemsandmeasuringuintRow {
+                get {
+                    return ((ItemsandmeasuringuintRow)(this.GetParentRow(this.Table.ParentRelations["FK_transfers_Iteam2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_transfers_Iteam2"]);
                 }
             }
             
@@ -7460,6 +7864,126 @@ namespace Ma5zeny {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ItemsandmeasuringuintRow : global::System.Data.DataRow {
+            
+            private ItemsandmeasuringuintDataTable tableItemsandmeasuringuint;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ItemsandmeasuringuintRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableItemsandmeasuringuint = ((ItemsandmeasuringuintDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int BarCode {
+                get {
+                    return ((int)(this[this.tableItemsandmeasuringuint.BarCodeColumn]));
+                }
+                set {
+                    this[this.tableItemsandmeasuringuint.BarCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableItemsandmeasuringuint.NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'Itemsandmeasuringuint\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableItemsandmeasuringuint.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Measuring_unit {
+                get {
+                    return ((string)(this[this.tableItemsandmeasuringuint.Measuring_unitColumn]));
+                }
+                set {
+                    this[this.tableItemsandmeasuringuint.Measuring_unitColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNameNull() {
+                return this.IsNull(this.tableItemsandmeasuringuint.NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNameNull() {
+                this[this.tableItemsandmeasuringuint.NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Buying_includesRow[] GetBuying_includesRows() {
+                if ((this.Table.ChildRelations["FK__Buying_in__BarCo__3E52440B2"] == null)) {
+                    return new Buying_includesRow[0];
+                }
+                else {
+                    return ((Buying_includesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Buying_in__BarCo__3E52440B2"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Contains_ItemsRow[] GetContains_ItemsRows() {
+                if ((this.Table.ChildRelations["FK__Contains___BarCo__398D8EEE3"] == null)) {
+                    return new Contains_ItemsRow[0];
+                }
+                else {
+                    return ((Contains_ItemsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Contains___BarCo__398D8EEE3"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Iteam_Measuring_unitRow[] GetIteam_Measuring_unitRows() {
+                if ((this.Table.ChildRelations["FK__Iteam_Mea__BarCo__2C3393D02"] == null)) {
+                    return new Iteam_Measuring_unitRow[0];
+                }
+                else {
+                    return ((Iteam_Measuring_unitRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Iteam_Mea__BarCo__2C3393D02"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Selling_includesRow[] GetSelling_includesRows() {
+                if ((this.Table.ChildRelations["FK__Selling_i__BarCo__4222D4EF2"] == null)) {
+                    return new Selling_includesRow[0];
+                }
+                else {
+                    return ((Selling_includesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Selling_i__BarCo__4222D4EF2"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public transfersRow[] GettransfersRows() {
+                if ((this.Table.ChildRelations["FK_transfers_Iteam2"] == null)) {
+                    return new transfersRow[0];
+                }
+                else {
+                    return ((transfersRow[])(base.GetChildRows(this.Table.ChildRelations["FK_transfers_Iteam2"])));
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -7921,6 +8445,40 @@ namespace Ma5zeny {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Report2Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class ItemsandmeasuringuintRowChangeEvent : global::System.EventArgs {
+            
+            private ItemsandmeasuringuintRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ItemsandmeasuringuintRowChangeEvent(ItemsandmeasuringuintRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ItemsandmeasuringuintRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -13033,6 +13591,177 @@ FROM     Iteam INNER JOIN
         public virtual WarehouseDataSet.Report2DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             WarehouseDataSet.Report2DataTable dataTable = new WarehouseDataSet.Report2DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ItemsandmeasuringuintTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public ItemsandmeasuringuintTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Itemsandmeasuringuint";
+            tableMapping.ColumnMappings.Add("BarCode", "BarCode");
+            tableMapping.ColumnMappings.Add("Name", "Name");
+            tableMapping.ColumnMappings.Add("Measuring_unit", "Measuring_unit");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Ma5zeny.Properties.Settings.Default.WarehouseConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT Iteam.*, Iteam_Measuring_unit.Measuring_unit\r\nFROM     Iteam INNER JOIN\r\n " +
+                "                 Iteam_Measuring_unit ON Iteam.BarCode = Iteam_Measuring_unit.Ba" +
+                "rCode";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(WarehouseDataSet.ItemsandmeasuringuintDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual WarehouseDataSet.ItemsandmeasuringuintDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            WarehouseDataSet.ItemsandmeasuringuintDataTable dataTable = new WarehouseDataSet.ItemsandmeasuringuintDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

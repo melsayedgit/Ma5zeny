@@ -6,12 +6,12 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>6.69194in</Width>
+              <Width>6.78361in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>2.28065in</Height>
+              <Height>2.71505in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -397,8 +397,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Report1</DataSetName>
-        <Height>2.28065in</Height>
-        <Width>6.69194in</Width>
+        <Height>2.71505in</Height>
+        <Width>6.78361in</Width>
         <Style>
           <Border>
             <Style>None</Style>
