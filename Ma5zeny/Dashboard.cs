@@ -894,18 +894,20 @@ namespace Ma5zeny
             try
             {
                 var wrinvoice = AppManager.entities.Warehouses.Find(comboBox4.Text).Buying_Invoice;
-                int days = int.Parse(textBox26.Text);
+                int days = int.Parse(textBox27.Text);
                 TimeSpan daysspan = new TimeSpan(days, 0, 0, 0);
-                var reqDate = new DateTime();
-                reqDate = DateTime.Now;
-                reqDate.Subtract(daysspan);
-                listBox9.Items.Clear();
+                var fromNow = new DateTime();
+                fromNow = DateTime.Now + daysspan;
+
+
+                listBox10.Items.Clear();
                 foreach (var item in wrinvoice)
                 {
-                    if (item.Buying_Date > reqDate)
+                    if (item.producing_Date+new TimeSpan((int)item.expiry_count_days,0,0,0)<fromNow)
                     {
+                        var remaingDays = fromNow - item.producing_Date + new TimeSpan((int)item.expiry_count_days, 0, 0, 0);  
                         listBox10.Items.Add(item.Buying_includes.First().Iteam.Name + ",Buying Date: " + item.Buying_Date
-                            + ",supplier:" + item.Supplier + ",Days until Expiry" + item.expiry_count_days);
+                            + ",supplier:" + item.Supplier + ",Remaing until Expiry" + remaingDays.Value.Days+"days");
 
                     }
                 }
